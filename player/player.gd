@@ -20,6 +20,8 @@ func _unhandled_input(event):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else :
 			hud.hide_store()
+			var center = get_viewport().size / 2
+			get_viewport().warp_mouse(center)
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	#There is probably a better way to register mouse event input than using this function and this condition
