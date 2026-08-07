@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://brt0j6mg6qqa1" path="res://collectible/collectible.gd" id="3_gyfs4"]
 [ext_resource type="Script" uid="uid://c7cby1uiy5com" path="res://Store/hud.gd" id="4_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://cadj550d1u5th" path="res://Store/Store.tscn" id="4_d5x1h"]
+[ext_resource type="PackedScene" uid="uid://23iwiyh3nh2h" path="res://villianstuff/villian.glb" id="6_hq1ik"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_usgnq"]
 
@@ -72,6 +73,9 @@ vertical_alignment = 1
 
 [node name="Store" parent="HUD" unique_id=564668512 instance=ExtResource("4_d5x1h")]
 visible = false
+
+[node name="villian" parent="." unique_id=1873954669 instance=ExtResource("6_hq1ik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.771266, 0.66561985, -4.052243)
 
 [connection signal="body_entered" from="Collectible" to="Player" method="_on_collectible_body_entered"]
 [connection signal="body_entered" from="Collectible" to="Collectible" method="_on_body_entered"]
