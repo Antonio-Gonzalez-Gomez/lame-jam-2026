@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cadj550d1u5th"]
+
+[ext_resource type="Script" uid="uid://dt5lmv72stppa" path="res://Store/store.gd" id="1_m4bci"]
+
+[node name="Store" type="Control" unique_id=564668512]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m4bci")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=584048524]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 29.0
+offset_right = 985.0
+offset_bottom = 608.0
+color = Color(0.3530626, 0.35306263, 0.35306257, 1)
+
+[node name="Option 1" type="Button" parent="." unique_id=1018321217]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 106.0
+offset_right = 729.0
+offset_bottom = 214.0
+theme_override_font_sizes/font_size = 36
+text = "Speed up 
+5$"
+
+[node name="Option 2" type="Button" parent="." unique_id=1553995178]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 272.0
+offset_right = 729.0
+offset_bottom = 380.0
+theme_override_font_sizes/font_size = 36
+text = "Strength up
+5$"
+
+[node name="Option 3" type="Button" parent="." unique_id=1200292197]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 438.0
+offset_right = 729.0
+offset_bottom = 546.0
+theme_override_font_sizes/font_size = 36
+text = "Escape 
+20$"
+
+[connection signal="pressed" from="Option 1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="Option 2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="Option 3" to="." method="_on_option_3_pressed"]
