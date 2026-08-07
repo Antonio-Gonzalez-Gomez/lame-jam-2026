@@ -2,20 +2,26 @@ extends CharacterBody3D
 
 @export var speed := 5.0
 @export var mouse_sensitivity := 0.002
-@export var current_money := 0
 const GRAVITY := 9.8
 @onready var cam = $CameraPoint
-@onready var money_hud = $"../HUD/Money"
+@onready var hud: CanvasLayer = $"../HUD"
 
 func _ready() -> void:
-	#Lock cursor for camera movement
+	GlobalAutoload.speed_up.connect(speed_up)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):
-	#Esc to show the cursor and close the game window
-	if event.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		
+	#opens and closes store
+	#could move it into its the ui script if we want the game to pause in the shop
+	
+	if event.is_action_pressed("open_store"):
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			hud.show_store()
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else :
+			hud.hide_store()
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 	#There is probably a better way to register mouse event input than using this function and this condition
 	if !(event is InputEventMouseMotion):
 		return
@@ -58,8 +64,6 @@ func _process(delta: float) -> void:
 		velocity.z = direction.z * 0
 
 	move_and_slide()
-	
-func collect_money(money: int) -> void:
-	print("you grabbed " + str(money) + " dollars lmao")
-	current_money += money
-	money_hud.text = str(current_money) + " $"
+
+func speed_up():
+	speed += 10
