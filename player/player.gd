@@ -2,9 +2,10 @@ extends CharacterBody3D
 
 @export var speed := 5.0
 @export var mouse_sensitivity := 0.002
-
+@export var current_money := 0
 const GRAVITY := 9.8
 @onready var cam = $CameraPoint
+@onready var money_hud = $"../HUD/Money"
 
 func _ready() -> void:
 	#Lock cursor for camera movement
@@ -57,3 +58,8 @@ func _process(delta: float) -> void:
 		velocity.z = direction.z * 0
 
 	move_and_slide()
+	
+func collect_money(money: int) -> void:
+	print("you grabbed " + str(money) + " dollars lmao")
+	current_money += money
+	money_hud.text = str(current_money) + " $"

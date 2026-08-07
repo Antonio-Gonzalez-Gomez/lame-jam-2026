@@ -1,13 +1,22 @@
 [gd_scene format=3 uid="uid://d10ifeqqo4oj5"]
 
-[ext_resource type="Script" uid="uid://dyptcpb1hhjuw" path="res://player.gd" id="1_0f027"]
+[ext_resource type="Script" uid="uid://dyptcpb1hhjuw" path="res://player/player.gd" id="1_0f027"]
+[ext_resource type="Texture2D" uid="uid://bxrn4oay7050b" path="res://icon.svg" id="2_2c62f"]
+[ext_resource type="Script" uid="uid://brt0j6mg6qqa1" path="res://collectible/collectible.gd" id="3_gyfs4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_usgnq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_usgnq"]
 size = Vector3(20, 1, 20)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyfs4"]
+albedo_texture = ExtResource("2_2c62f")
+
 [sub_resource type="BoxMesh" id="BoxMesh_usgnq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eg8xt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_eg8xt"]
 
 [node name="Node3D" type="Node3D" unique_id=208756949]
 
@@ -15,7 +24,7 @@ size = Vector3(20, 1, 20)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.888051, 0)
 script = ExtResource("1_0f027")
 
-[node name="Collision" type="CollisionShape3D" parent="Player" unique_id=436584612]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=436584612]
 shape = SubResource("CapsuleShape3D_usgnq")
 
 [node name="CameraPoint" type="Node3D" parent="Player" unique_id=559837233]
@@ -30,4 +39,33 @@ shape = SubResource("BoxShape3D_usgnq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1758060460]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_gyfs4")
 mesh = SubResource("BoxMesh_usgnq")
+
+[node name="Sunlight" type="DirectionalLight3D" parent="." unique_id=1703013051]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 22.356361, 0)
+
+[node name="Collectible" type="Area3D" parent="." unique_id=1945272884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2509184, 1.1573666, -7.421401)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible" unique_id=333222251]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible" unique_id=1629610197]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=522649653]
+
+[node name="Money" type="RichTextLabel" parent="HUD" unique_id=499931944]
+offset_right = 131.0
+offset_bottom = 113.0
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 16
+text = "0 $"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Collectible" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Collectible" to="Collectible" method="_on_body_entered"]
