@@ -74,4 +74,4 @@ func _process(delta: float) -> void:
 	else : GlobalAutoload.player_vision = null
 
 func speed_up():
-	speed += 10
+	speed += 2.5
