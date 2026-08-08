@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://deqbs5yvyib80"]
+
+[ext_resource type="Texture2D" uid="uid://c8sd3ujdb0v51" path="res://villianstuff/villian_Untitled.png" id="1_5wpg1"]
+
+[resource]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_5wpg1")
+emission_enabled = true
+emission_energy_multiplier = 4.0
+emission_texture = ExtResource("1_5wpg1")
