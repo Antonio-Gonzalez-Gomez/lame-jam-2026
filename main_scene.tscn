@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c7cby1uiy5com" path="res://Store/hud.gd" id="4_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://cadj550d1u5th" path="res://Store/Store.tscn" id="4_d5x1h"]
 [ext_resource type="PackedScene" uid="uid://23iwiyh3nh2h" path="res://villianstuff/villian.glb" id="6_hq1ik"]
+[ext_resource type="Script" uid="uid://0wifjq2nip6o" path="res://villianstuff/villian.gd" id="7_66tet"]
 [ext_resource type="Script" uid="uid://i7uauca245yg" path="res://player/microphone.gd" id="7_nfk4m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_usgnq"]
@@ -22,6 +23,9 @@ albedo_texture = ExtResource("2_2c62f")
 
 [sub_resource type="BoxMesh" id="BoxMesh_eg8xt"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_uhn5l"]
+size = Vector3(0.625, 0.64, 0.495)
+
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_usgnq"]
 
 [node name="Node3D" type="Node3D" unique_id=208756949]
@@ -36,6 +40,10 @@ shape = SubResource("CapsuleShape3D_usgnq")
 [node name="CameraPoint" type="Node3D" parent="Player" unique_id=559837233]
 
 [node name="Camera3D" type="Camera3D" parent="Player/CameraPoint" unique_id=614773839]
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/CameraPoint/Camera3D" unique_id=1173223687]
+target_position = Vector3(0, 0, -20)
+collide_with_areas = true
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1604979015]
 
@@ -77,8 +85,42 @@ vertical_alignment = 1
 [node name="Store" parent="HUD" unique_id=564668512 instance=ExtResource("4_d5x1h")]
 visible = false
 
+[node name="ProgressBar" type="ProgressBar" parent="HUD" unique_id=1769140376]
+offset_left = 21.0
+offset_top = 201.0
+offset_right = 48.0
+offset_bottom = 401.0
+max_value = 400.0
+fill_mode = 3
+show_percentage = false
+
+[node name="ColorRect" type="ColorRect" parent="HUD" unique_id=807065462]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+
 [node name="villian" parent="." unique_id=1873954669 instance=ExtResource("6_hq1ik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.771266, 0.66561985, -4.052243)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.771266, 0.44753242, -4.052243)
+script = ExtResource("7_66tet")
+
+[node name="Cube_001" parent="villian" index="0" unique_id=1906653422]
+transform = Transform3D(-0.16199999, 0, -1.4162489e-08, 0, 0.16199999, 0, 1.4162489e-08, 0, -0.16199999, -0.040367603, 0.027517319, 0.5495229)
+
+[node name="Face" type="Area3D" parent="villian" unique_id=1161194390]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="villian/Face" unique_id=91995660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.57783556)
+shape = SubResource("BoxShape3D_uhn5l")
 
 [node name="Microphone" type="AudioStreamPlayer" parent="." unique_id=1123221219]
 stream = SubResource("AudioStreamMicrophone_usgnq")
@@ -88,3 +130,5 @@ script = ExtResource("7_nfk4m")
 
 [connection signal="body_entered" from="Collectible" to="Player" method="_on_collectible_body_entered"]
 [connection signal="body_entered" from="Collectible" to="Collectible" method="_on_body_entered"]
+
+[editable path="villian"]
