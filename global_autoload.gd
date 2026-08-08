@@ -1,6 +1,9 @@
 extends Node
 
 # Sends signal when money is added, for UI purposes and other scripted events 
+var voice := 0.0
+
+var player_vision
 
 var money := 0: 
 	set(x):

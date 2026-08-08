@@ -70,11 +70,8 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 	if ray_cast_3d.is_colliding():
-		if ray_cast_3d.get_collider() == $"../villian/Face" and $"../Microphone".volume >= 200:
-			
-			villian.speed = -5
-	else:
-		villian.speed = 5
+		GlobalAutoload.player_vision = ray_cast_3d.get_collider()
+	else : GlobalAutoload.player_vision = null
 
 func speed_up():
 	speed += 10
