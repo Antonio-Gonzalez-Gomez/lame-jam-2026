@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c7cby1uiy5com" path="res://Store/hud.gd" id="4_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://cadj550d1u5th" path="res://Store/Store.tscn" id="4_d5x1h"]
 [ext_resource type="PackedScene" uid="uid://23iwiyh3nh2h" path="res://villianstuff/villian.glb" id="6_hq1ik"]
+[ext_resource type="Script" uid="uid://i7uauca245yg" path="res://player/microphone.gd" id="7_nfk4m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_usgnq"]
 
@@ -20,6 +21,8 @@ albedo_texture = ExtResource("2_2c62f")
 [sub_resource type="BoxShape3D" id="BoxShape3D_eg8xt"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_eg8xt"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_usgnq"]
 
 [node name="Node3D" type="Node3D" unique_id=208756949]
 
@@ -76,6 +79,12 @@ visible = false
 
 [node name="villian" parent="." unique_id=1873954669 instance=ExtResource("6_hq1ik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.771266, 0.66561985, -4.052243)
+
+[node name="Microphone" type="AudioStreamPlayer" parent="." unique_id=1123221219]
+stream = SubResource("AudioStreamMicrophone_usgnq")
+autoplay = true
+bus = &"Microphone"
+script = ExtResource("7_nfk4m")
 
 [connection signal="body_entered" from="Collectible" to="Player" method="_on_collectible_body_entered"]
 [connection signal="body_entered" from="Collectible" to="Collectible" method="_on_body_entered"]
