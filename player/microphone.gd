@@ -3,6 +3,8 @@ extends AudioStreamPlayer
 var capture: AudioEffectCapture
 var volume := 0.0
 
+
+
 func _ready():
 	var bus_index = AudioServer.get_bus_index("Microphone")
 	capture = AudioServer.get_bus_effect(bus_index, 0) as AudioEffectCapture
@@ -21,5 +23,7 @@ func _process(_delta):
 			sum += amplitude
 
 		volume = sum / buffer.size() * 1000
+		if GlobalAutoload.strength_upgrade :
+			volume *= 1.5
 		GlobalAutoload.voice = volume
 		
