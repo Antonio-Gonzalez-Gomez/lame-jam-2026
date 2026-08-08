@@ -104,13 +104,153 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2
 light_energy = 0.24
 
 [node name="Collectible" type="Area3D" parent="." unique_id=1945272884]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2509184, 1.1573666, -37.421402)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.25092, 1.1573666, -46.421402)
 script = ExtResource("3_gyfs4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible" unique_id=333222251]
 shape = SubResource("BoxShape3D_eg8xt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible" unique_id=1629610197]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[node name="Collectible2" type="Area3D" parent="." unique_id=1471663754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.25092, 1.1573666, -22.421402)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible2" unique_id=780735121]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible2" unique_id=912778915]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[node name="Collectible12" type="Area3D" parent="." unique_id=1666458818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.25092, 1.1573666, -12.421402)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible12" unique_id=1167465178]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible12" unique_id=413428046]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[node name="Collectible13" type="Area3D" parent="." unique_id=325125419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.25092, 1.1573666, -12.421402)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible13" unique_id=907432543]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible13" unique_id=319849780]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[node name="Collectible3" type="Area3D" parent="." unique_id=37465974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2509193, 1.1573666, -42.421402)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible3" unique_id=1303206207]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible3" unique_id=1785564682]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[node name="Collectible4" type="Area3D" parent="." unique_id=1112508327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.74908, 1.1573666, -46.421402)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible4" unique_id=600407042]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible4" unique_id=1990015281]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[node name="Collectible5" type="Area3D" parent="." unique_id=252978733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.74908, 1.1573666, -22.421402)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible5" unique_id=260837690]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible5" unique_id=508410904]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[node name="Collectible6" type="Area3D" parent="." unique_id=1447915837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.74908, 1.1573666, -37.421402)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible6" unique_id=503456751]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible6" unique_id=1846833641]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[node name="Collectible7" type="Area3D" parent="." unique_id=1645454627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.250919, 1.1573666, -2.421402)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible7" unique_id=41345165]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible7" unique_id=1407975371]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[node name="Collectible14" type="Area3D" parent="." unique_id=2058194850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.74908, 1.1573666, -2.421402)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible14" unique_id=1454722696]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible14" unique_id=693517143]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[node name="Collectible15" type="Area3D" parent="." unique_id=1618550703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.25092, 1.1573666, -32.421402)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible15" unique_id=916017769]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible15" unique_id=1634962499]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[node name="Collectible8" type="Area3D" parent="." unique_id=845443358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7490807, 1.1573666, -17.421402)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible8" unique_id=2127464829]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible8" unique_id=1915353541]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[node name="Collectible9" type="Area3D" parent="." unique_id=1615679748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.74908, 1.1573666, -21.421402)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible9" unique_id=923174112]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible9" unique_id=1323524376]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[node name="Collectible10" type="Area3D" parent="." unique_id=2122186167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.74908, 1.1573666, -31.421402)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible10" unique_id=640294294]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible10" unique_id=1173250415]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[node name="Collectible11" type="Area3D" parent="." unique_id=22958381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.74908, 1.1573666, -36.421402)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectible11" unique_id=637425419]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectible11" unique_id=1101965757]
 mesh = SubResource("BoxMesh_eg8xt")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=522649653]
@@ -281,5 +421,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -2)
 
 [connection signal="body_entered" from="Collectible" to="Player" method="_on_collectible_body_entered"]
 [connection signal="body_entered" from="Collectible" to="Collectible" method="_on_body_entered"]
+[connection signal="body_entered" from="Collectible2" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Collectible2" to="Collectible2" method="_on_body_entered"]
+[connection signal="body_entered" from="Collectible12" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Collectible12" to="Collectible12" method="_on_body_entered"]
+[connection signal="body_entered" from="Collectible13" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Collectible13" to="Collectible13" method="_on_body_entered"]
+[connection signal="body_entered" from="Collectible3" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Collectible3" to="Collectible3" method="_on_body_entered"]
+[connection signal="body_entered" from="Collectible4" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Collectible4" to="Collectible4" method="_on_body_entered"]
+[connection signal="body_entered" from="Collectible5" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Collectible5" to="Collectible5" method="_on_body_entered"]
+[connection signal="body_entered" from="Collectible6" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Collectible6" to="Collectible6" method="_on_body_entered"]
+[connection signal="body_entered" from="Collectible7" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Collectible7" to="Collectible7" method="_on_body_entered"]
+[connection signal="body_entered" from="Collectible14" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Collectible14" to="Collectible14" method="_on_body_entered"]
+[connection signal="body_entered" from="Collectible15" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Collectible15" to="Collectible15" method="_on_body_entered"]
+[connection signal="body_entered" from="Collectible8" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Collectible8" to="Collectible8" method="_on_body_entered"]
+[connection signal="body_entered" from="Collectible9" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Collectible9" to="Collectible9" method="_on_body_entered"]
+[connection signal="body_entered" from="Collectible10" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Collectible10" to="Collectible10" method="_on_body_entered"]
+[connection signal="body_entered" from="Collectible11" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Collectible11" to="Collectible11" method="_on_body_entered"]
 
 [editable path="villian"]
