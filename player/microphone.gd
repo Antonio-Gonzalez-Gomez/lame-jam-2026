@@ -21,5 +21,5 @@ func _process(_delta):
 			sum += amplitude
 
 		volume = sum / buffer.size() * 1000
-		$"../HUD/ProgressBar".value = volume
+		GlobalAutoload.voice = volume
 		
