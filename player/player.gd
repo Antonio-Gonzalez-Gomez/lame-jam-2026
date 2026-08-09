@@ -5,6 +5,8 @@ extends CharacterBody3D
 const GRAVITY := 9.8
 @onready var cam = $CameraPoint
 @onready var hud: CanvasLayer = $"../HUD"
+@onready var villian: Node3D = $"../villian"
+@onready var ray_cast_3d: RayCast3D = $CameraPoint/Camera3D/RayCast3D
 
 func _ready() -> void:
 	GlobalAutoload.speed_up.connect(speed_up)
@@ -67,5 +69,9 @@ func _process(delta: float) -> void:
 
 	move_and_slide()
 
+	if ray_cast_3d.is_colliding():
+		GlobalAutoload.player_vision = ray_cast_3d.get_collider()
+	else : GlobalAutoload.player_vision = null
+
 func speed_up():
-	speed += 10
+	speed += 2.5

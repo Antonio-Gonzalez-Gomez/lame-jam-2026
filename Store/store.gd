@@ -12,7 +12,7 @@ func _on_option_1_pressed() -> void:
 
 func _on_option_2_pressed() -> void:
 	if GlobalAutoload.money >= 5:
-		GlobalAutoload.strength_up.emit()
+		GlobalAutoload.strength_upgrade = true
 		GlobalAutoload.money -= 5
 		$"Option 2".queue_free()
 

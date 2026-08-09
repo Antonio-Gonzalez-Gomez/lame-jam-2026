@@ -2,9 +2,13 @@ extends CanvasLayer
 
 @onready var money_ui: RichTextLabel = $Money
 @onready var store: Control = $Store
+@onready var progress_bar: ProgressBar = $ProgressBar
 
 func _ready() -> void:
 	GlobalAutoload.collected_money.connect(update_money_counter)
+
+func _process(_delta: float) -> void:
+	progress_bar.value = GlobalAutoload.voice
 
 func update_money_counter(money):
 	money_ui.text = str(money) + "$"

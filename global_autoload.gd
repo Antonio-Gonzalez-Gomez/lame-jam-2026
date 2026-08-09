@@ -1,6 +1,10 @@
 extends Node
 
 # Sends signal when money is added, for UI purposes and other scripted events 
+var voice := 0.0
+var strength_upgrade
+
+var player_vision
 
 var money := 0: 
 	set(x):
@@ -12,7 +16,5 @@ signal collected_money
 
 @warning_ignore("unused_signal")
 signal speed_up
-@warning_ignore("unused_signal")
-signal strength_up
 @warning_ignore("unused_signal")
 signal escape
