@@ -10,6 +10,6 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(_body: Node3D) -> void:
 	#Execute code on the autoload
-	GlobalAutoload.money += 5
+	GlobalAutoload.money += money_value
 	#Destroys itself after being collected
 	queue_free()

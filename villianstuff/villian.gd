@@ -1,6 +1,10 @@
 extends Node3D
 
 @export var voice_requirement := 200.0
+@export var base_speed := 1.0
+@export var max_speed := 4.0
+@export var base_scare_requirement := 1.0
+@export var max_scare_requirement := 2.0
 
 @onready var player: CharacterBody3D = $"../Player"
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
@@ -9,11 +13,12 @@ extends Node3D
 @onready var spawn_location_2: Node3D = $"../Map/Spawn location 2"
 
 var scare_meter := 0.0
-var scare_requirement := 0.9
-var speed = 3.0
+var speed = base_speed
+var scare_requirement = base_scare_requirement
 
 func _ready() -> void:
 	await get_tree().physics_frame
+	GlobalAutoload.change_difficulty.connect(reset_stats)
 
 func _physics_process(delta: float) -> void:
 	nav_agent.target_position = player.global_position
@@ -23,9 +28,8 @@ func _physics_process(delta: float) -> void:
 		scare_meter += delta
 		if scare_meter >= scare_requirement:
 			position = get_farthest_spawn().position
-			speed = 3
+			reset_stats()
 			scare_meter = 0
-			scare_requirement += 0.15
 	else:
 		speed += 0.15 * delta
 		scare_meter -= delta/5
@@ -49,3 +53,7 @@ func get_farthest_spawn() -> Node3D:
 		return spawn_location
 	else:
 		return spawn_location_2
+		
+func reset_stats() -> void:
+	speed = base_speed + (max_speed - base_speed) * GlobalAutoload.difficulty
+	scare_requirement = base_scare_requirement + (max_scare_requirement - base_scare_requirement) * GlobalAutoload.difficulty

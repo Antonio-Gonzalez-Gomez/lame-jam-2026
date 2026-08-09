@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://hkrkgr1x2og1" path="res://Assets/dirty_carpet_1k.gltf/textures/dirty_carpet_nor_gl_1k.jpg" id="10_mo76n"]
 [ext_resource type="Script" uid="uid://c1a4p4ni40j38" path="res://breakable_wall.gd" id="11_671wp"]
 [ext_resource type="Texture2D" uid="uid://bd1iodi1oylyp" path="res://BreakME.png" id="11_qwutr"]
-[ext_resource type="Script" uid="uid://camhv1hkwkbbm" path="res://collectible/collectible_manager.gd" id="12_671wp"]
+[ext_resource type="Script" uid="uid://camhv1hkwkbbm" path="res://collectible/collectible_spawner.gd" id="12_671wp"]
 [ext_resource type="PackedScene" uid="uid://bv8n8r6xq81lf" path="res://collectible/collectible.tscn" id="13_mo76n"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_usgnq"]
@@ -262,56 +262,56 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, -48)
 [node name="Spawn location 2" type="Node3D" parent="Map" unique_id=1771101618]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -2)
 
-[node name="CollectibleManager" type="Node3D" parent="." unique_id=1348661970]
+[node name="CollectibleSpawner" type="Node3D" parent="." unique_id=1348661970]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
 script = ExtResource("12_671wp")
 
-[node name="Collectible" parent="CollectibleManager" unique_id=716509786 instance=ExtResource("13_mo76n")]
+[node name="Collectible" parent="CollectibleSpawner" unique_id=716509786 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 1.5, -18)
 
-[node name="Collectible2" parent="CollectibleManager" unique_id=945964984 instance=ExtResource("13_mo76n")]
+[node name="Collectible2" parent="CollectibleSpawner" unique_id=945964984 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 1.5, -12)
 
-[node name="Collectible3" parent="CollectibleManager" unique_id=1902278911 instance=ExtResource("13_mo76n")]
+[node name="Collectible3" parent="CollectibleSpawner" unique_id=1902278911 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.5, 1.5, -21.5)
 
-[node name="Collectible4" parent="CollectibleManager" unique_id=995303590 instance=ExtResource("13_mo76n")]
+[node name="Collectible4" parent="CollectibleSpawner" unique_id=995303590 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 1.5, -2)
 
-[node name="Collectible5" parent="CollectibleManager" unique_id=1799101157 instance=ExtResource("13_mo76n")]
+[node name="Collectible5" parent="CollectibleSpawner" unique_id=1799101157 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 1.5, 13)
 
-[node name="Collectible6" parent="CollectibleManager" unique_id=370064223 instance=ExtResource("13_mo76n")]
+[node name="Collectible6" parent="CollectibleSpawner" unique_id=370064223 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.5, 22.5)
 
-[node name="Collectible7" parent="CollectibleManager" unique_id=843910365 instance=ExtResource("13_mo76n")]
+[node name="Collectible7" parent="CollectibleSpawner" unique_id=843910365 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.5, 7.5)
 
-[node name="Collectible8" parent="CollectibleManager" unique_id=1276113486 instance=ExtResource("13_mo76n")]
+[node name="Collectible8" parent="CollectibleSpawner" unique_id=1276113486 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 1.5, 2.5)
 
-[node name="Collectible9" parent="CollectibleManager" unique_id=44649486 instance=ExtResource("13_mo76n")]
+[node name="Collectible9" parent="CollectibleSpawner" unique_id=44649486 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, 1.5, -12.5)
 
-[node name="Collectible10" parent="CollectibleManager" unique_id=351060385 instance=ExtResource("13_mo76n")]
+[node name="Collectible10" parent="CollectibleSpawner" unique_id=351060385 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 1.5, -17.5)
 
-[node name="Collectible11" parent="CollectibleManager" unique_id=2128455413 instance=ExtResource("13_mo76n")]
+[node name="Collectible11" parent="CollectibleSpawner" unique_id=2128455413 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 1.5, -12)
 
-[node name="Collectible12" parent="CollectibleManager" unique_id=2030824227 instance=ExtResource("13_mo76n")]
+[node name="Collectible12" parent="CollectibleSpawner" unique_id=2030824227 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1.5, 2.5)
 
-[node name="Collectible13" parent="CollectibleManager" unique_id=1199527970 instance=ExtResource("13_mo76n")]
+[node name="Collectible13" parent="CollectibleSpawner" unique_id=1199527970 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1.5, 3)
 
-[node name="Collectible14" parent="CollectibleManager" unique_id=128858592 instance=ExtResource("13_mo76n")]
+[node name="Collectible14" parent="CollectibleSpawner" unique_id=128858592 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 1.5, 22.5)
 
-[node name="Collectible15" parent="CollectibleManager" unique_id=66050807 instance=ExtResource("13_mo76n")]
+[node name="Collectible15" parent="CollectibleSpawner" unique_id=66050807 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1.5, -7)
 
-[node name="Collectible16" parent="CollectibleManager" unique_id=723088508 instance=ExtResource("13_mo76n")]
+[node name="Collectible16" parent="CollectibleSpawner" unique_id=723088508 instance=ExtResource("13_mo76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 1.5, 12.5)
 
 [editable path="villian"]
