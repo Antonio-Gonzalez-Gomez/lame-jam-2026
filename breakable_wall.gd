@@ -1,7 +1,12 @@
 extends StaticBody3D
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if GlobalAutoload.player_vision == self and GlobalAutoload.voice >= 100:
-		queue_free()
+
+func _process(_delta: float) -> void:
+	if GlobalAutoload.player_vision == self and GlobalAutoload.voice >= 100 and not $CollisionShape3D.disabled:
+		death()
+
+func death():
+	$plank4/AnimationTree.active = true
+	$plank3/AnimationTree.active = true
+	$CollisionShape3D.disabled = true
