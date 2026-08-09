@@ -15,12 +15,18 @@ run/main_scene="uid://d10ifeqqo4oj5"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://b7fb8nnkumg3c"
+driver/enable_input=true
+
 [autoload]
 
 GlobalAutoload="*uid://c1wvd48wapgm4"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
