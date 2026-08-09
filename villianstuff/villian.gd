@@ -9,7 +9,7 @@ extends Node3D
 @onready var spawn_location_2: Node3D = $"../Map/Spawn location 2"
 
 var scare_meter := 0.0
-var scare_requirement := 0.9
+var scare_requirement := 0.5
 var speed = 3.0
 
 func _ready() -> void:
@@ -23,13 +23,14 @@ func _physics_process(delta: float) -> void:
 		scare_meter += delta
 		if scare_meter >= scare_requirement:
 			position = get_farthest_spawn().position
-			speed = 3
+			speed = 3 + ((speed - 3)/3)
 			scare_meter = 0
 			scare_requirement += 0.15
 	else:
-		speed += 0.15 * delta
 		scare_meter -= delta/5
 		if scare_meter < 0: scare_meter = 0
+		if scare_meter == 0:
+			speed += 0.15 * delta
 
 	var current_pos = global_position
 	var next_pos = nav_agent.get_next_path_position()

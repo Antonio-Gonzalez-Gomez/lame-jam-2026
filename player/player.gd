@@ -13,8 +13,8 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):
-	#opens and closes store
-	#could move it into its the ui script if we want the game to pause in the shop
+	
+	
 	
 	if event.is_action_pressed("open_store"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -26,14 +26,11 @@ func _unhandled_input(event):
 			get_viewport().warp_mouse(center)
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	#There is probably a better way to register mouse event input than using this function and this condition
 	if !(event is InputEventMouseMotion):
 		return
 
-	#Rotate the player horizontally
 	rotate_y(-event.relative.x * mouse_sensitivity)
 	
-	#Rotate its head (camera point) vertically
 	cam.rotate_x(-event.relative.y * mouse_sensitivity)
 	cam.rotation.x = clamp(
 		cam.rotation.x,
@@ -42,11 +39,10 @@ func _unhandled_input(event):
 	)
 
 func _process(delta: float) -> void:
-	#Falling down
+	
 	if not is_on_floor():
 		velocity.y -= GRAVITY * delta
 
-	#Wasd movement
 	var input_dir = Input.get_vector(
 		"move_left",
 		"move_right",
@@ -62,7 +58,6 @@ func _process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
-	#We can change this later to give the player inertia but meh
 	else:
 		velocity.x = direction.x * 0
 		velocity.z = direction.z * 0
