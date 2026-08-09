@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b30ruu3pytcu6"
-path.s3tc="res://.godot/imported/villian_Untitled.png-8490ff806a3719c902bfc88bf5958eb1.s3tc.ctex"
+uid="uid://ckgmhpb536s4f"
+path.s3tc="res://.godot/imported/Tabled_Tablet2.png-9594beb46a9aaea77850c880e17a64b2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "23fa00ccf8d70926c0c32f851e2ad7de"
+"md5": "ca3906e5be8ad33a7e9f86260771128b"
 }
 
 [deps]
 
-source_file="res://villianstuff/villian_Untitled.png"
-dest_files=["res://.godot/imported/villian_Untitled.png-8490ff806a3719c902bfc88bf5958eb1.s3tc.ctex"]
+source_file="res://Assets/Tabled_Tablet2.png"
+dest_files=["res://.godot/imported/Tabled_Tablet2.png-9594beb46a9aaea77850c880e17a64b2.s3tc.ctex"]
 
 [params]
 
