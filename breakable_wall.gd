@@ -3,7 +3,7 @@ extends StaticBody3D
 
 
 func _process(_delta: float) -> void:
-	if GlobalAutoload.player_vision == self and GlobalAutoload.voice >= 100 and not $CollisionShape3D.disabled:
+	if GlobalAutoload.player_vision == self and GlobalAutoload.voice >= 200 and not $CollisionShape3D.disabled:
 		death()
 
 func death():
