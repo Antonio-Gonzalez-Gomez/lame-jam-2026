@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bv8n8r6xq81lf"]
+
+[ext_resource type="Script" uid="uid://brt0j6mg6qqa1" path="res://collectible/collectible.gd" id="1_df0ds"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eg8xt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_671wp"]
+albedo_color = Color(0.004322915, 0.03786113, 0.004529043, 1)
+emission_enabled = true
+emission = Color(0, 0.62352943, 0.27058825, 1)
+emission_energy_multiplier = 0.96
+
+[sub_resource type="BoxMesh" id="BoxMesh_eg8xt"]
+material = SubResource("StandardMaterial3D_671wp")
+
+[node name="Collectible" type="Area3D" unique_id=716509786]
+script = ExtResource("1_df0ds")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1596300890]
+shape = SubResource("BoxShape3D_eg8xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=447063041]
+mesh = SubResource("BoxMesh_eg8xt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
