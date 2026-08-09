@@ -2,6 +2,7 @@ extends Node3D
 
 @export var ammount := 8
 
+
 var collectibles: Array[Node] = []
 
 func _ready() -> void:

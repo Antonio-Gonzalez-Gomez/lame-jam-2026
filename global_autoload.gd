@@ -23,8 +23,8 @@ signal change_difficulty
 func _ready() -> void:
 	pass
 
-
-
+@warning_ignore("unused_signal")
+signal xray
 @warning_ignore("unused_signal")
 signal speed_up
 @warning_ignore("unused_signal")

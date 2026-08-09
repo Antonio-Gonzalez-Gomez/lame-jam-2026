@@ -21,3 +21,10 @@ func _on_option_3_pressed() -> void:
 	if GlobalAutoload.money >= 40:
 		GlobalAutoload.escape.emit()
 		GlobalAutoload.money -= 40
+
+
+func _on_option_4_pressed() -> void:
+	if GlobalAutoload.money >= 10:
+		GlobalAutoload.xray.emit()
+		GlobalAutoload.money -= 10
+		$"Option 4".queue_free()
