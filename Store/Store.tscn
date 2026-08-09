@@ -28,7 +28,7 @@ offset_right = 729.0
 offset_bottom = 214.0
 theme_override_font_sizes/font_size = 36
 text = "Speed up 
-5$"
+10$"
 
 [node name="Option 2" type="Button" parent="." unique_id=1553995178]
 layout_mode = 0
@@ -38,7 +38,7 @@ offset_right = 729.0
 offset_bottom = 380.0
 theme_override_font_sizes/font_size = 36
 text = "Strength up
-5$"
+10$"
 
 [node name="Option 3" type="Button" parent="." unique_id=1200292197]
 layout_mode = 0
@@ -48,7 +48,7 @@ offset_right = 729.0
 offset_bottom = 546.0
 theme_override_font_sizes/font_size = 36
 text = "Escape 
-20$"
+40$"
 
 [connection signal="pressed" from="Option 1" to="." method="_on_option_1_pressed"]
 [connection signal="pressed" from="Option 2" to="." method="_on_option_2_pressed"]

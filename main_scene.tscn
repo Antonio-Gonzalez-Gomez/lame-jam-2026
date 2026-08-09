@@ -3,36 +3,28 @@
 [ext_resource type="Script" uid="uid://dyptcpb1hhjuw" path="res://player/player.gd" id="1_0f027"]
 [ext_resource type="Script" uid="uid://c7cby1uiy5com" path="res://Store/hud.gd" id="4_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://cadj550d1u5th" path="res://Store/Store.tscn" id="4_d5x1h"]
-[ext_resource type="PackedScene" uid="uid://23iwiyh3nh2h" path="res://villianstuff/villian.glb" id="6_hq1ik"]
-[ext_resource type="Script" uid="uid://0wifjq2nip6o" path="res://villianstuff/villian.gd" id="7_66tet"]
+[ext_resource type="PackedScene" uid="uid://d1sfwil3qa3oh" path="res://villianstuff/villian.tscn" id="4_qwutr"]
+[ext_resource type="PackedScene" uid="uid://dq6mjsm74gtrb" path="res://breakable wall/breakable_wall.tscn" id="6_671wp"]
 [ext_resource type="Script" uid="uid://i7uauca245yg" path="res://player/microphone.gd" id="7_nfk4m"]
 [ext_resource type="Texture2D" uid="uid://bdvpjvpaasdpe" path="res://Assets/dirty_carpet_1k.gltf/textures/dirty_carpet_diff_1k.jpg" id="8_qwutr"]
 [ext_resource type="Texture2D" uid="uid://bj5jg5tk5yjn1" path="res://Assets/dirty_carpet_1k.gltf/textures/dirty_carpet_arm_1k.jpg" id="9_671wp"]
 [ext_resource type="Texture2D" uid="uid://hkrkgr1x2og1" path="res://Assets/dirty_carpet_1k.gltf/textures/dirty_carpet_nor_gl_1k.jpg" id="10_mo76n"]
-[ext_resource type="Script" uid="uid://c1a4p4ni40j38" path="res://breakable_wall.gd" id="11_671wp"]
-[ext_resource type="Texture2D" uid="uid://bd1iodi1oylyp" path="res://BreakME.png" id="11_qwutr"]
-[ext_resource type="Script" uid="uid://camhv1hkwkbbm" path="res://collectible/collectible_manager.gd" id="12_671wp"]
-[ext_resource type="PackedScene" uid="uid://bv8n8r6xq81lf" path="res://collectible/collectible.tscn" id="13_mo76n"]
+[ext_resource type="PackedScene" uid="uid://bv8n8r6xq81lf" path="res://collectible/collectible.tscn" id="10_wr18j"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wr18j"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_qwutr"]
+sky_material = SubResource("ProceduralSkyMaterial_wr18j")
+
+[sub_resource type="Environment" id="Environment_671wp"]
+background_mode = 2
+sky = SubResource("Sky_qwutr")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_usgnq"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_uhn5l"]
-size = Vector3(0.625, 0.64, 0.495)
-
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_usgnq"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_17xpg"]
-size = Vector3(1, 3.5, 4.535)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mo76n"]
-shading_mode = 0
-albedo_texture = ExtResource("11_qwutr")
-uv1_scale = Vector3(7.24, 7.24, 7.24)
-uv1_offset = Vector3(0.285, -0.24, 0)
-
-[sub_resource type="BoxMesh" id="BoxMesh_17xpg"]
-material = SubResource("StandardMaterial3D_mo76n")
-size = Vector3(1, 3.5, 4.600464)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_uhn5l"]
 vertices = PackedVector3Array(-25, 4.5, -39.75, -30, 4.5, -39.25, -24.75, 4.5, -39.25, -20, 4.5, -48.75, -20, 4.5, -44.25, -19.5, 4.5, -49, 34.5, 4.5, -39.5, 44.75, 4.5, -39.5, 35, 4.5, -39.75, -10.25, 4.5, -49, -10, 4.5, -44.25, -9.5, 4.5, -49, -24.5, 4.5, -49, -25.25, 4.5, -49, -49.5, 4.5, -50, 34.25, 4.5, -49, 35, 4.5, -49, 49.5, 4.5, -50, 49.75, 4.5, -49, -49.25, 4.5, -48.75, -43.75, 1, -40.5, -43.5, 1, -39.75, -40.5, 1, -39.75, -40.5, 1, -43, -43.5, 1, -43.25, -45.5, 1, -43.5, -47.75, 1, -40.5, -45.5, 1, -47.75, -47.75, 1, -47.75, -40.25, 1, -45.5, -43.25, 1, -47.75, -30.75, 1, -45.5, -30.25, 1, -47.75, -29, 1, -45.5, -26, 1, -47.75, -33.25, 1, -39.5, -31, 1, -39.5, -30.75, 1, -40.5, -33.25, 1, -43.25, -28.75, 1, -43.5, -26, 1, -40.5, -20.5, 1, -40.25, -19.5, 1, -40.5, -19.75, 1, -43.25, -21, 1, -43.5, -21, 1, -47.75, -23.75, 1, -47.75, -23.75, 1, -38.5, -23.5, 1, -35.5, -20.5, 1, -35.5, -16, 1, -45.25, -14.75, 1, -45.5, -14.75, 1, -47.75, -18.75, 1, -43.5, -18.75, 1, -47.75, -16, 1, -40.5, -13.75, 1, -45.25, -6, 1, -45.25, -4.75, 1, -45.5, -4.75, 1, -47.75, -8.75, 1, -47.75, -8.75, 1, -43.5, -6, 1, -40.5, -10.75, 1, -43.25, -13.75, 1, -40.5, -11, 1, -47.75, -3.75, 1, -45.25, -0.75, 1, -45, -3.75, 1, -38.5, -4.5, 1, -38.25, -4.25, 1, -35.5, -1, 1, -35.5, 1.25, 1, -44.75, 1.25, 1, -40.25, 4, 1, -40.5, 4, 1, -47.75, 6.25, 1, -41, 9, 1, -41, 9.25, 1, -45, 6.25, 1, -47.75, 28.75, 1, -47.75, 28.5, 1, -45, 29.25, 1, -42.75, 29.75, 1, -40.5, 30.75, 1, -40.5, 30.25, 1, -43.25, 30.25, 1, -44.75, 33.5, 1, -47.75, 31, 1, -39.5, 33.5, 1, -39.5, 44, 1, -40.75, 44.25, 1, -43.5, 38.75, 1, -43.5, 35.75, 1, -40.75, 38.5, 1, -45.5, 49, 1, -45.75, 49, 1, -47.75, 35.75, 1, -47.75, 39.5, 4.5, -44.75, 50, 4.5, -44.25, 50, 4.5, -45, -39.5, 4.5, -44.5, -39.5, 4.5, -44, -29.75, 4.5, -44.25, 0, 4.5, -9.75, 0, 4.5, -4.25, 0.25, 4.5, -9.75, -20, 4.5, -9.75, -20, 4.5, -5.25, -19.5, 4.5, -10, -4.75, 4.5, -39.25, -4.75, 4.5, -44.5, -5.25, 4.5, -39.5, -14.5, 4.5, -39.5, -15, 4.5, -44.5, -15, 4.5, -39.75, -10.25, 4.5, -19.75, -9.75, 4.5, -19.25, -9.5, 4.5, -19.75, -9.75, 4.5, -20.25, -5, 4.5, -15.5, -9.75, 4.5, -15, -5, 4.5, -14.75, -10, 4.5, -29, -9.75, 4.5, -29, -4.75, 4.5, -29.5, -9.75, 4.5, -29.75, -10, 4.5, -29.75, -15, 4.5, -29.5, -5.25, 4.5, -19.75, -4.5, 4.5, -20, -10.25, 4.5, -10, -9.75, 4.5, -5.5, -9.5, 4.5, -10.25, -14.75, 4.5, -10.5, -15.25, 4.5, -10.25, -9.75, 4.5, -39, -10, 4.5, -39, -19.5, 4.5, -39.5, -19.5, 4.5, -39, -4.5, 4.5, -10, 5.5, 4.5, -10, -4.5, 4.5, -10.25, -5, 4.5, -4.25, -14.75, 4.5, -19.5, -10, 4.5, -20.25, -15, 4.5, -19.75, -24.75, 4.5, -10.25, 24, 4.5, -44, 24.25, 4.5, -40, 24.75, 4.5, -43.75, 45.75, 1, -40.5, 49, 1, -43.5, 44.5, 1, -38.5, 44.5, 1, -35, 45.25, 1, -35, 49, 1, -35.25, 45.75, 1, -38.75, -43.5, 1, -34.5, -41, 1, -34.5, -40.75, 1, -35.5, -40.25, 1, -39.25, -38.25, 1, -39.5, -35.5, 1, -43.25, -38.25, 1, -43.25, -35.5, 1, -35.5, 11.25, 1, -39.75, 13.75, 1, -39.75, 14, 1, -40.5, 11.25, 1, -42.75, 20.75, 1, -40.5, 21, 1, -38.5, 23.5, 1, -38.75, 23.25, 1, -42.75, 16, 1, -40.25, 16, 1, -35.5, 18.75, 1, -35.5, 19, 1, -40.5, 28.75, 1, -40.25, 21, 1, -35.5, 25.5, 1, -42.75, 25.5, 1, -39, 28.75, 1, -35.5, 10.75, 1, -38.75, 13.75, 1, -35.5, 4.25, 1, -38.75, 1.25, 1, -35.5, -44.75, 4.5, -29.25, -34.75, 4.5, -29.25, -44.25, 4.5, -29.5, -49, 4.5, -39.75, -49, 4.5, -39, -44.75, 4.5, -39, -44.5, 4.5, -39.5, -30.75, 1, -38.25, -33.25, 1, -35.5, 14.5, 4.5, -34.5, -4, 4.5, -34.5, 14.5, 4.5, -34.25, 20.25, 4.5, -34.5, 19.75, 4.5, -39.5, 19.75, 4.5, -34.75, 30.25, 4.5, -34.5, 30, 4.5, -39.5, 29.5, 4.5, -34.5, 15.25, 4.5, -34.5, 14.75, 4.5, -39.5, 19.5, 4.5, -24.25, 19.75, 4.5, -24.75, 15, 4.5, -25, 14.5, 4.5, -24.5, 15.25, 4.5, -34.25, 39, 4.5, -34.25, 19.25, 4.5, -19.75, 14.5, 4.5, -19.5, 29.75, 4.5, -19.5, 19.75, 4.5, -20, 33.75, 1, -38.5, 31, 1, -35.5, 43.75, 1, -35, 40, 1, -35.5, 40.25, 1, -35, -43.5, 1, -25.25, -43.25, 1, -28.25, -45.75, 1, -28.5, -47.75, 1, -25.5, -45.75, 1, -38.25, -47.75, 1, -38.25, -18.5, 1, -29.5, -16, 1, -29.5, -15.75, 1, -30.5, -18.5, 1, -33.25, -13.75, 1, -33.5, -11, 1, -38.25, -14, 1, -35.5, -11, 1, -30.5, -18.25, 1, -38.25, -18.25, 1, -35.5, -4.5, 1, -30.5, -4.25, 1, -33.25, -5, 1, -33.5, -8.75, 1, -30.5, -5, 1, -35.25, -8.75, 1, -38.25, 45.75, 1, -34.75, 45.75, 1, -18.75, 43.5, 1, -18.5, 43.5, 1, -16, 49, 1, -16, 40.5, 1, -30.75, 40.75, 1, -29.75, 43.5, 1, -29.75, 40, 1, -33.25, 34.5, 1, -31, 34.25, 1, -33.25, -45, 4.5, -19.5, -44.75, 4.5, -14.25, -44.5, 4.5, -19.25, -39.5, 4.5, -19.75, -39.75, 4.5, -24.5, -40, 4.5, -19.5, -19.5, 4.5, -34, -15, 4.5, -34.25, -19.25, 4.5, -34.75, -20, 4.5, -34.25, -40, 4.5, -34.5, -29.75, 4.5, -24.75, -29.5, 4.5, -24.25, -29.25, 4.5, -29.25, -29.75, 4.5, -29.5, -19.75, 4.5, -29.75, -19.5, 4.5, -29.25, -34.75, 4.5, -24.5, -34.5, 4.5, -24, -35, 4.5, -19.5, -34.5, 4.5, -19.25, -40.75, 1, -33.25, -43.5, 1, -30.5, -33.75, 1, -30.25, -33.5, 1, -33.25, 44.5, 4.5, -25, 39.5, 4.5, -24.75, 44.25, 4.5, -24.5, 29.5, 4.5, -5, 24.5, 4.5, -5, 30, 4.5, -4.75, 30, 4.5, -9.5, 29.75, 4.5, -10, 34.75, 4.5, -10.25, 35, 4.5, -9.75, 35.25, 4.5, -19.5, 34.75, 4.5, -19.75, 44.75, 4.5, -19.5, 44.5, 4.5, -20, 44.5, 4.5, -34, -33.75, 1, -28.5, -34.75, 1, -28.25, -34.5, 1, -25.5, -30.75, 1, -25.5, -30.5, 1, -30.5, -20.75, 1, -30.5, -20.75, 1, -33.25, -3.75, 1, -28.5, -4.75, 1, -28.25, -4.75, 1, -25.75, 1.25, 1, -25.75, -0.75, 1, -28.25, -3.75, 1, -30.25, -1, 1, -30.25, -1.25, 1, -33.25, 1.25, 1, -28.25, 11, 1, -30.5, 11.25, 1, -28.25, 13.75, 1, -28.25, 13.75, 1, -33.25, 18.75, 1, -30.75, 20.75, 1, -30.75, 20.75, 1, -33.25, 16, 1, -33.25, 18.5, 1, -28.75, 16, 1, -25.75, 20.75, 1, -25.5, 21, 1, -28.5, 32.75, 1, -30.75, 30.5, 1, -30.75, 30.5, 1, -28.5, 25.75, 1, -28.5, 25.75, 1, -25.75, 32.75, 1, -25.75, 34.25, 4.5, -29.5, 39.75, 4.5, -29.5, 33.75, 4.5, -30, 33.5, 4.5, -24.75, 34, 4.5, -24.5, 24.5, 4.5, -29.25, 24.5, 4.5, -24.5, 25, 4.5, -24.75, 24.75, 4.5, -29.25, 29.75, 4.5, -29.75, 19.5, 4.5, -29.75, 40.5, 1, -28.5, 43.5, 1, -25.75, 38.75, 1, -25.75, 35, 1, -28.5, 35, 1, -24, 38.5, 1, -24, -15, 1, -26, -14.5, 1, -28.25, -15.75, 1, -28.25, -18.75, 1, -28.25, -28.5, 1, -23.75, -25.5, 1, -23.75, -25.5, 1, -26, -28.5, 1, -28.25, 10.25, 4.5, -29.5, 0, 4.5, -29.5, 9.75, 4.5, -29.25, 10, 4.5, -20, 5.25, 4.5, -19.5, 10.5, 4.5, -19.25, 25, 1, -20.75, 25.25, 1, -23.5, 23.5, 1, -23.75, 20.75, 1, -20.75, 23.5, 1, -28.5, -40.75, 1, -25.25, -39.5, 1, -25.5, -39.5, 1, -28.25, -43.5, 1, -23.5, -45.25, 1, -23.25, -45, 1, -20.5, -40.75, 1, -20.5, -38.5, 1, -25.25, -35.75, 1, -25.25, -38.5, 1, -20.5, -35.75, 1, -20.5, -13.5, 1, -25.75, -11, 1, -28.25, -18.25, 1, -19.75, -16, 1, -19.25, -15.5, 1, -21, -13.5, 1, -24, -11, 1, -21, -18.25, 1, -23.75, -4.75, 1, -21, -4.75, 1, -23.5, -5.75, 1, -23.75, -8.75, 1, -21, -5.75, 1, -25.5, -8.75, 1, -28.25, 6.25, 1, -23.5, 4, 1, -23.5, 4.25, 1, -20.5, 9, 1, -20.75, 6.5, 1, -25.5, 9, 1, -28.25, 11.5, 1, -19.75, 13.5, 1, -19.75, 13.75, 1, -20.75, 13.5, 1, -23.75, 18.5, 1, -20.75, 18.5, 1, -23.5, -19.5, 4.5, -24.5, -19.25, 4.5, -19.25, -19.25, 4.5, -24.5, -24.5, 4.5, -19.75, -29.75, 4.5, -19.5, -24.75, 4.5, -19.25, -24.75, 4.5, -14.75, -19.5, 4.5, -14.75, -24.25, 4.5, -15.25, -14.5, 4.5, -24.75, -24.25, 4.5, -24.5, -24.75, 4.5, -25, -49, 4.5, -24.75, -49, 4.5, -24, -44.5, 4.5, -24.25, 19.5, 4.5, -10, 19.75, 4.5, -5.25, 20.25, 4.5, -10, 0.25, 4.5, -24.25, 5.5, 4.5, -24.75, -4.75, 4.5, -24.75, 0, 4.5, -24.25, 24.75, 4.5, -10.5, 25, 4.5, -10, 25.25, 4.5, -15, 24.5, 4.5, -15, 0.25, 4.5, -15.5, 0, 4.5, -14.25, 0.5, 4.5, -15, 9.75, 4.5, -15, 10.5, 4.5, -15.25, 14.25, 4.5, -15.25, 10.5, 4.5, -10.25, 10, 4.5, -10, 29.75, 4.5, -15, 34.25, 1, -23.5, 34.5, 1, -20.75, 38.75, 1, -23.5, 43.5, 1, -20.75, 43.5, 1, -23.5, -33.5, 1, -19.75, -30.75, 1, -19.5, -30.5, 1, -20.5, -28.75, 1, -23.25, -33.5, 1, -23.25, -25.5, 1, -20.5, -18.5, 1, -18.25, -18.75, 1, -16, -18.5, 1, -15, -16, 1, -15, -20.25, 1, -18.25, -20.5, 1, -23.75, -23.25, 1, -23.75, -23.25, 1, -16, -3.5, 1, -20.75, -1, 1, -23.5, -3.5, 1, -14.5, -1, 1, -14.5, 5.75, 1, -16.25, 6.25, 1, -18.5, 4.25, 1, -18.75, 1.25, 1, -16.25, 1.25, 1, -23.5, 33.75, 1, -20.5, 30.5, 1, -20.75, 30.75, 1, -19.75, 33.75, 1, -19.75, -45.25, 1, -10.5, -45.5, 1, -13.25, -46, 1, -13.5, -47.75, 1, -10.5, -46, 1, -20.25, -47.75, 1, -23.25, -29.5, 1, -15.5, -29.25, 1, -18.25, -30.5, 1, -18.25, -33.75, 1, -18.25, -38.75, 1, -15.5, -39, 1, -18.25, 11.25, 1, -16.25, 11.5, 1, -15.25, 13.25, 1, -15.25, 13.5, 1, -16.25, 11, 1, -18.25, 13.75, 1, -18.5, 15.25, 1, -16.25, 15.5, 1, -18.5, 30.5, 1, -18.5, 28.75, 1, -18.5, 28.75, 1, -16.25, 30.75, 1, -16, 30.75, 1, -14.25, 33.75, 1, -11, 29.75, 1, -14, 29.75, 1, -11, -8.75, 1, -11.25, -8.5, 1, -10.75, -6, 1, -10.75, -10.75, 1, -18.25, -11, 1, -18.75, -13.75, 1, -18.75, -10.75, 1, -16, -6, 1, -14, -10.5, 1, -14, -13.75, 1, -11.25, -6, 1, -16.25, -6, 1, -18.75, 38.75, 1, -15.75, 36, 1, -18.5, 36, 1, -9, 38.75, 1, -8.5, -40.5, 1, -15.25, -43.75, 1, -13.5, -43.75, 1, -18.25, -40.5, 1, -10.5, -28.25, 1, -10, -25.75, 1, -10, -25.5, 1, -11.25, -25.5, 1, -13.75, -28.25, 1, -15.25, -18.75, 1, -13.75, -16, 1, -11.25, -25.5, 1, -18.25, 13.5, 1, -14, 11.25, 1, -11.25, 23.75, 1, -11.25, 23.75, 1, -14, 39.75, 4.5, -5.25, 34.5, 4.5, -5, 44.75, 4.5, -4.75, 40, 4.5, -5.25, 40, 4.5, -14.5, 50, 4.5, -14.5, 50, 4.5, -15.25, 39.75, 4.5, -15, 6.25, 1, -11.25, 6.5, 1, -10.25, 9, 1, -10.25, -0.75, 1, -13.25, -3.75, 1, -11.25, 1, 1, -13.25, 9, 1, -14, 1.25, 1, -14, -29, 4.5, -4.75, -23.5, 4.5, -5, -29.25, 4.5, -5.25, -14.5, 4.5, 0, -15, 4.5, -4.5, -15.25, 4.5, 0, 15.25, 4.5, -5.25, 5, 4.5, -5.25, 14.5, 4.5, -5, 15.25, 4.5, 0, 14.5, 4.5, 0, -29, 4.5, 0, -29.75, 4.5, 0, -49.5, 4.5, 1, -39.75, 4.5, -9.5, -49, 4.5, -9.75, -49, 4.5, -9, -39.25, 4.5, -9.25, 49.5, 4.5, 1, -39, 4.5, -14.25, -39.5, 4.5, -14.5, -49.5, 4.5, 0, -29.25, 4.5, -14.5, -29.75, 4.5, -14.25, 49.75, 4.5, 0.25, 21, 1, -5.25, 23.5, 1, -5.25, 23.75, 1, -6, 28.75, 1, -10.75, 21, 1, -9, 25.75, 1, -9, 26, 1, -14, 28.75, 1, -6, 45.75, 1, -5.75, 46, 1, -8.75, 43.75, 1, -8.75, 41, 1, -6, 43.5, 1, -10.75, 49, 1, -11, 49, 1, -13.75, 41, 1, -13.75, -38.25, 1, -8.5, -40, 1, -8.25, -39.75, 1, -1, -30.5, 1, -13.25, -38.25, 1, -13.25, -30.5, 1, -1, -5, 1, -1, -5, 1, -3.25, -6, 1, -3.5, -8.75, 1, -4.75, -9.25, 1, -4.5, -9.25, 1, -1, 9.25, 1, -9.25, 6.25, 1, -9, 4.25, 1, -6.25, 1.25, 1, -9, 1.25, 1, -5.25, 4, 1, -5.25, 9, 1, -6.25, 44.5, 4.5, -10, 50, 4.5, -9.5, 50, 4.5, -10.25, -22.75, 1, -6, -22.5, 1, -5.25, -21, 1, -5.25, -25.5, 1, -9, -21, 1, -9, -28.25, 1, -6, 16, 1, -6.25, 16.25, 1, -5.25, 18.75, 1, -5.25, 18.75, 1, -9, -18.75, 1, -5, -16, 1, -4.75, -15.75, 1, -5.5, -18.75, 1, -9, -11, 1, -4.75, -13.75, 1, -5.25, -11, 1, -9, -13.75, 1, -1, -3.75, 1, -3.5, -0.75, 1, -3.25, 4.25, 1, -4, 1, 1, -3.25, -1, 1, -9, -3.75, 1, -9, 13.75, 1, -1, 13.75, 1, -4, 35, 1, -1, 35.25, 1, -3.75, 33.5, 1, -4, 30.75, 1, -3.75, 38.75, 1, -6, 31, 1, -8.75, 33.5, 1, -5.75, 25, 1, -1, 25.25, 1, -3.75, 49, 1, -8.75, 49, 1, -1, 45.5, 1, -3.75, -47.75, 1, -8.25, -47.75, 1, -1, -20.75, 1, -4.25, -22.75, 1, -3.75, -28.25, 1, -3.75, -28.25, 1, -1, -19, 1, -4.25, -16, 1, -1, 20.75, 1, -4.25, 23.75, 1, -3.75, 19, 1, -4.25, 16, 1, -1)
@@ -77,8 +69,11 @@ data = PackedVector3Array(-50, -0.5, -50, -50, 0, -50, -50, 0, -48.5, -45, 0.5, 
 
 [node name="Node3D" type="Node3D" unique_id=208756949]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1056917785]
+environment = SubResource("Environment_671wp")
+
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1992947678]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.888051, -46.084564)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.888051, -2.0845642)
 script = ExtResource("1_0f027")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=436584612]
@@ -93,7 +88,7 @@ target_position = Vector3(0, 0, -20)
 collide_with_areas = true
 
 [node name="Sunlight" type="DirectionalLight3D" parent="." unique_id=1703013051]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 22.356361, 0)
+transform = Transform3D(0.9659258, -1.131334e-08, 0.25881904, -0.25881904, -4.222196e-08, 0.9659258, 0, -1, -4.371139e-08, 0, 22.356361, 0)
 light_energy = 0.24
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=522649653]
@@ -133,25 +128,21 @@ offset_top = 201.0
 offset_right = 48.0
 offset_bottom = 401.0
 max_value = 300.0
+value = 200.0
 allow_greater = true
 fill_mode = 3
 show_percentage = false
 
-[node name="villian" parent="." unique_id=1873954669 instance=ExtResource("6_hq1ik")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -27.228733, 1.0222945, -2.0522423)
-script = ExtResource("7_66tet")
+[node name="ColorRect" type="ColorRect" parent="HUD/ProgressBar" unique_id=1815335141]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 63.0
+offset_right = 34.0
+offset_bottom = 68.0
+color = Color(0.18692067, 0, 0.009681254, 1)
 
-[node name="Cube_001" parent="villian" index="0" unique_id=749742186]
-transform = Transform3D(-0.16199999, 0, -1.4162489e-08, 0, 0.16199999, 0, 1.4162489e-08, 0, -0.16199999, -0.040367603, -0.5091331, 0.5495224)
-
-[node name="Face" type="Area3D" parent="villian" unique_id=1161194390]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5209117, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="villian/Face" unique_id=91995660]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.57783556)
-shape = SubResource("BoxShape3D_uhn5l")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="villian" unique_id=1018774057]
+[node name="villian" parent="." unique_id=1679819218 instance=ExtResource("4_qwutr")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -6.228733, 1.0222945, -47.052242)
 
 [node name="Microphone" type="AudioStreamPlayer" parent="." unique_id=1123221219]
 stream = SubResource("AudioStreamMicrophone_usgnq")
@@ -161,89 +152,26 @@ script = ExtResource("7_nfk4m")
 
 [node name="Map" type="Node3D" parent="." unique_id=1130897372]
 
-[node name="Breakable wall3" type="StaticBody3D" parent="Map" unique_id=151349699]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.626009, 0, -17.79548)
-script = ExtResource("11_671wp")
+[node name="Breakable wall" parent="Map" unique_id=406220646 instance=ExtResource("6_671wp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.31807, 0, -16.79548)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Breakable wall3" unique_id=1414685064]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2450562, 0)
-shape = SubResource("BoxShape3D_17xpg")
+[node name="Breakable wall4" parent="Map" unique_id=2146774964 instance=ExtResource("6_671wp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.99044, 0, -2.3050537)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Breakable wall3" unique_id=270853953]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.257, 0)
-mesh = SubResource("BoxMesh_17xpg")
+[node name="Breakable wall3" parent="Map" unique_id=319927870 instance=ExtResource("6_671wp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.473976, 0, -21.79548)
 
-[node name="Breakable wall8" type="StaticBody3D" parent="Map" unique_id=1733910733]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.846, 0, -22.222399)
-script = ExtResource("11_671wp")
+[node name="Breakable wall5" parent="Map" unique_id=578914526 instance=ExtResource("6_671wp")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.5260239, 0, -28.79548)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Breakable wall8" unique_id=850581620]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2450562, 0)
-shape = SubResource("BoxShape3D_17xpg")
+[node name="Breakable wall8" parent="Map" unique_id=2070729534 instance=ExtResource("6_671wp")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -19.350286, 0, -3.069807)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Breakable wall8" unique_id=122040090]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.257, 0)
-mesh = SubResource("BoxMesh_17xpg")
+[node name="Breakable wall9" parent="Map" unique_id=868475441 instance=ExtResource("6_671wp")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -30.350286, 0, -17.069807)
 
-[node name="Breakable wall4" type="StaticBody3D" parent="Map" unique_id=291043894]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.626009, 0, -2.7954807)
-script = ExtResource("11_671wp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Breakable wall4" unique_id=1170387815]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2450562, 0)
-shape = SubResource("BoxShape3D_17xpg")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Breakable wall4" unique_id=105216968]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.257, 0)
-mesh = SubResource("BoxMesh_17xpg")
-
-[node name="Breakable wall5" type="StaticBody3D" parent="Map" unique_id=900657424]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18983173, 0, -26.79548)
-script = ExtResource("11_671wp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Breakable wall5" unique_id=860003077]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2450562, 0)
-shape = SubResource("BoxShape3D_17xpg")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Breakable wall5" unique_id=1837099985]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.257, 0)
-mesh = SubResource("BoxMesh_17xpg")
-
-[node name="Breakable wall7" type="StaticBody3D" parent="Map" unique_id=1402296435]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.06408, 0, -37.110996)
-script = ExtResource("11_671wp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Breakable wall7" unique_id=1523123988]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2450562, 0)
-shape = SubResource("BoxShape3D_17xpg")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Breakable wall7" unique_id=1686481683]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.257, 0)
-mesh = SubResource("BoxMesh_17xpg")
-
-[node name="Breakable wall2" type="StaticBody3D" parent="Map" unique_id=1386801500]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.81688, 0, -2.684245)
-script = ExtResource("11_671wp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Breakable wall2" unique_id=1218823748]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2450562, 0)
-shape = SubResource("BoxShape3D_17xpg")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Breakable wall2" unique_id=869480778]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.257, 0)
-mesh = SubResource("BoxMesh_17xpg")
-
-[node name="Breakable wall6" type="StaticBody3D" parent="Map" unique_id=1916218151]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.606993, 0, -16.684246)
-script = ExtResource("11_671wp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Breakable wall6" unique_id=1412993477]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2450562, 0)
-shape = SubResource("BoxShape3D_17xpg")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Breakable wall6" unique_id=1317064850]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.257, 0)
-mesh = SubResource("BoxMesh_17xpg")
+[node name="Breakable wall7" parent="Map" unique_id=1663682882 instance=ExtResource("6_671wp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.972782, 0, -36.503098)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map" unique_id=345771740]
 navigation_mesh = SubResource("NavigationMesh_uhn5l")
@@ -262,56 +190,77 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, -48)
 [node name="Spawn location 2" type="Node3D" parent="Map" unique_id=1771101618]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -2)
 
-[node name="CollectibleManager" type="Node3D" parent="." unique_id=1348661970]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
-script = ExtResource("12_671wp")
+[node name="Coins" type="Node3D" parent="." unique_id=519701250]
 
-[node name="Collectible" parent="CollectibleManager" unique_id=716509786 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 1.5, -18)
+[node name="Collectible" parent="Coins" unique_id=153260620 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.25092, 1.1573666, -46.421402)
 
-[node name="Collectible2" parent="CollectibleManager" unique_id=945964984 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 1.5, -12)
+[node name="Collectible2" parent="Coins" unique_id=88711293 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.25092, 1.1573666, -41.421402)
 
-[node name="Collectible3" parent="CollectibleManager" unique_id=1902278911 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.5, 1.5, -21.5)
+[node name="Collectible3" parent="Coins" unique_id=1400872468 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2509193, 1.1573666, -42.421402)
 
-[node name="Collectible4" parent="CollectibleManager" unique_id=995303590 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 1.5, -2)
+[node name="Collectible4" parent="Coins" unique_id=1677403269 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.74908, 1.1573666, -46.421402)
 
-[node name="Collectible5" parent="CollectibleManager" unique_id=1799101157 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 1.5, 13)
+[node name="Collectible5" parent="Coins" unique_id=153883226 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.74908, 1.1573666, -12.421402)
 
-[node name="Collectible6" parent="CollectibleManager" unique_id=370064223 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.5, 22.5)
+[node name="Collectible6" parent="Coins" unique_id=357503337 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7490807, 1.1573666, -17.421402)
 
-[node name="Collectible7" parent="CollectibleManager" unique_id=843910365 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.5, 7.5)
+[node name="Collectible7" parent="Coins" unique_id=739468954 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.25092, 1.1573666, -22.421402)
 
-[node name="Collectible8" parent="CollectibleManager" unique_id=1276113486 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 1.5, 2.5)
+[node name="Collectible8" parent="Coins" unique_id=1748534273 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.25092, 1.1573666, -27.421402)
 
-[node name="Collectible9" parent="CollectibleManager" unique_id=44649486 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, 1.5, -12.5)
+[node name="Collectible9" parent="Coins" unique_id=1140681819 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.749081, 1.1573666, -37.421402)
 
-[node name="Collectible10" parent="CollectibleManager" unique_id=351060385 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 1.5, -17.5)
+[node name="Collectible10" parent="Coins" unique_id=1085072824 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.74908, 1.1573666, -37.421402)
 
-[node name="Collectible11" parent="CollectibleManager" unique_id=2128455413 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 1.5, -12)
+[node name="Collectible11" parent="Coins" unique_id=1270874006 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.74908, 1.1573666, -46.421402)
 
-[node name="Collectible12" parent="CollectibleManager" unique_id=2030824227 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1.5, 2.5)
+[node name="Collectible12" parent="Coins" unique_id=1585588015 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.25092, 1.1573666, -12.421402)
 
-[node name="Collectible13" parent="CollectibleManager" unique_id=1199527970 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1.5, 3)
+[node name="Collectible13" parent="Coins" unique_id=1606941721 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.25092, 1.1573666, -22.421402)
 
-[node name="Collectible14" parent="CollectibleManager" unique_id=128858592 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 1.5, 22.5)
+[node name="Collectible14" parent="Coins" unique_id=1121451628 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.25092, 1.1573666, -12.421402)
 
-[node name="Collectible15" parent="CollectibleManager" unique_id=66050807 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1.5, -7)
+[node name="Collectible16" parent="Coins" unique_id=1452116754 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2509193, 1.1573666, -7.421402)
 
-[node name="Collectible16" parent="CollectibleManager" unique_id=723088508 instance=ExtResource("13_mo76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 1.5, 12.5)
+[node name="Collectible17" parent="Coins" unique_id=1763338504 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.74908, 1.1573666, -2.421402)
 
-[editable path="villian"]
+[node name="Collectible18" parent="Coins" unique_id=1350771680 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.74908, 1.1573666, -31.421402)
+
+[node name="Collectible19" parent="Coins" unique_id=342968851 instance=ExtResource("10_wr18j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.74908, 1.1573666, -22.421402)
+
+[connection signal="body_entered" from="Coins/Collectible" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible2" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible3" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible4" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible5" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible6" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible7" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible8" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible9" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible10" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible11" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible12" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible13" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible14" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible16" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible17" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible18" to="Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible19" to="Player" method="_on_collectible_body_entered"]

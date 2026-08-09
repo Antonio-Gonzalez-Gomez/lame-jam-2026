@@ -3,8 +3,8 @@ extends Node3D
 @export var voice_requirement := 200.0
 @export var base_speed := 1.0
 @export var max_speed := 4.0
-@export var base_scare_requirement := 1.0
-@export var max_scare_requirement := 2.0
+@export var base_scare_requirement := 0.15
+@export var max_scare_requirement := 1.0
 
 @onready var player: CharacterBody3D = $"../Player"
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
@@ -23,17 +23,20 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	nav_agent.target_position = player.global_position
 	
-	if GlobalAutoload.player_vision == $Face and GlobalAutoload.voice >= 100:
+	if GlobalAutoload.player_vision == $Face and GlobalAutoload.voice >= 200:
 		nav_agent.target_position = position
 		scare_meter += delta
 		if scare_meter >= scare_requirement:
 			position = get_farthest_spawn().position
 			reset_stats()
 			scare_meter = 0
+			#speed = 3 + ((speed - 3)/3)
+			#scare_requirement += 0.1
 	else:
-		speed += 0.15 * delta
 		scare_meter -= delta/5
 		if scare_meter < 0: scare_meter = 0
+		if scare_meter == 0:
+			speed += 0.15 * delta
 
 	var current_pos = global_position
 	var next_pos = nav_agent.get_next_path_position()
