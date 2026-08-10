@@ -5,7 +5,7 @@ extends CharacterBody3D
 const GRAVITY := 9.8
 @onready var cam = $CameraPoint
 @onready var hud: CanvasLayer = $"../../../HUD"
-@onready var villian: Node3D = $"../../../villian"
+@onready var villian: Node3D = $"../villian"
 @onready var ray_cast_3d: RayCast3D = $CameraPoint/Camera3D/RayCast3D
 
 func _ready() -> void:

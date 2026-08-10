@@ -27,7 +27,6 @@ func _physics_process(delta: float) -> void:
 		nav_agent.target_position = position
 		scare_meter += delta
 		$Model/AnimationPlayer.stop()
-		start_timed_shake(0.01,0.05,position)
 		if scare_meter >= scare_requirement:
 			position = get_farthest_spawn().position
 			reset_stats()
