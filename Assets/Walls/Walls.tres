@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://y8a8g0l472c"]
+
+[ext_resource type="Texture2D" uid="uid://ctxptow6ig3hq" path="res://Assets/Walls/slumped_mortar_brick_diff_1k.jpg" id="1_wem34"]
+[ext_resource type="Texture2D" uid="uid://qeh21djsrmya" path="res://Assets/Walls/slumped_mortar_brick_nor_gl_1k.png" id="2_nlrnm"]
+[ext_resource type="Texture2D" uid="uid://bs3xklkh3uu5s" path="res://Assets/Walls/slumped_mortar_brick_rough_1k.png" id="3_638jy"]
+
+[resource]
+albedo_texture = ExtResource("1_wem34")
+roughness_texture = ExtResource("3_638jy")
+normal_enabled = true
+normal_texture = ExtResource("2_nlrnm")
+uv1_scale = Vector3(0.165, 0.165, 0.165)
+uv1_triplanar = true
