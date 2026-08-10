@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1ug635m4yr10"]
 
 [ext_resource type="Script" uid="uid://dj6gtkqp3qx5v" path="res://end and start screens/end_screen.gd" id="1_ntvnp"]
+[ext_resource type="Texture2D" uid="uid://os4evsapyvh0" path="res://end and start screens/winscreen3.png" id="2_33la3"]
 
 [node name="end screen" type="Control" unique_id=992819749]
 layout_mode = 3
@@ -19,3 +20,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Winscreen3" type="Sprite2D" parent="." unique_id=331994994]
+position = Vector2(579, 326)
+scale = Vector2(0.61041665, 0.6055556)
+texture = ExtResource("2_33la3")
