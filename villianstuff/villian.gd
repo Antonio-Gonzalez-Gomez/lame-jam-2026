@@ -6,7 +6,7 @@ extends Node3D
 @export var base_scare_requirement := 0.15
 @export var max_scare_requirement := 1.0
 
-@onready var player: CharacterBody3D = $"../Player"
+@onready var player: CharacterBody3D = $"../SubViewportContainer/SubViewport/Player"
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 
 @onready var spawn_location: Node3D = $"../Map/Spawn location"

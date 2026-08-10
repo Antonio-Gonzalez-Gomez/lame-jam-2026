@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cfs2agior3tgg" path="res://Assets/roof/checkered_pavement_tiles_diff_1k.jpg" id="11_2jcla"]
 [ext_resource type="Texture2D" uid="uid://bixxv031wp28e" path="res://Assets/roof/checkered_pavement_tiles_nor_gl_1k.png" id="12_m35m6"]
 [ext_resource type="Texture2D" uid="uid://c1klktnjum4um" path="res://Assets/roof/checkered_pavement_tiles_rough_1k.png" id="13_u0ygc"]
+[ext_resource type="Shader" uid="uid://blcd1gasaror8" path="res://viewport.gdshader" id="15_m35m6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wr18j"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -28,8 +29,6 @@ background_mode = 1
 background_color = Color(0.39179674, 0, 0.14746037, 1)
 background_energy_multiplier = 0.2
 sky = SubResource("Sky_qwutr")
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_usgnq"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_usgnq"]
 
@@ -86,25 +85,16 @@ uv1_scale = Vector3(23.3, 23.3, 23.3)
 material = SubResource("StandardMaterial3D_17xpg")
 size = Vector3(100, 1, 50)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uhn5l"]
+shader = ExtResource("15_m35m6")
+shader_parameter/pixelSize = 4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_usgnq"]
+
 [node name="Node3D" type="Node3D" unique_id=208756949]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1056917785]
 environment = SubResource("Environment_671wp")
-
-[node name="Player" type="CharacterBody3D" parent="." unique_id=1992947678]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.888051, -2.0845642)
-script = ExtResource("1_0f027")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=436584612]
-shape = SubResource("CapsuleShape3D_usgnq")
-
-[node name="CameraPoint" type="Node3D" parent="Player" unique_id=559837233]
-
-[node name="Camera3D" type="Camera3D" parent="Player/CameraPoint" unique_id=614773839]
-
-[node name="RayCast3D" type="RayCast3D" parent="Player/CameraPoint/Camera3D" unique_id=1173223687]
-target_position = Vector3(0, 0, -20)
-collide_with_areas = true
 
 [node name="Sunlight" type="DirectionalLight3D" parent="." unique_id=1703013051]
 transform = Transform3D(0.9659258, -1.131334e-08, 0.25881904, -0.25881904, -4.222196e-08, 0.9659258, 0, -1, -4.371139e-08, 0, 22.356361, 0)
@@ -270,21 +260,51 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.74908, 1.1573666, -31.421
 [node name="Collectible19" parent="Coins" unique_id=342968851 instance=ExtResource("10_wr18j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.74908, 1.1573666, -22.421402)
 
-[connection signal="body_entered" from="Coins/Collectible" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible2" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible3" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible4" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible5" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible6" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible7" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible8" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible9" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible10" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible11" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible12" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible13" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible14" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible16" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible17" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible18" to="Player" method="_on_collectible_body_entered"]
-[connection signal="body_entered" from="Coins/Collectible19" to="Player" method="_on_collectible_body_entered"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=2041703760]
+material = SubResource("ShaderMaterial_uhn5l")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1156104170]
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+size = Vector2i(1152, 648)
+
+[node name="Player" type="CharacterBody3D" parent="SubViewportContainer/SubViewport" unique_id=1992947678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.888051, -2.0845642)
+script = ExtResource("1_0f027")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Player" unique_id=436584612]
+shape = SubResource("CapsuleShape3D_usgnq")
+
+[node name="CameraPoint" type="Node3D" parent="SubViewportContainer/SubViewport/Player" unique_id=559837233]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Player/CameraPoint" unique_id=614773839]
+doppler_tracking = 1
+
+[node name="RayCast3D" type="RayCast3D" parent="SubViewportContainer/SubViewport/Player/CameraPoint/Camera3D" unique_id=1173223687]
+target_position = Vector3(0, 0, -20)
+collide_with_areas = true
+
+[connection signal="body_entered" from="Coins/Collectible" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible2" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible3" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible4" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible5" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible6" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible7" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible8" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible9" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible10" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible11" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible12" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible13" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible14" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible16" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible17" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible18" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
+[connection signal="body_entered" from="Coins/Collectible19" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
