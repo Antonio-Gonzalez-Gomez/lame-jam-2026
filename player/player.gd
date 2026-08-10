@@ -11,6 +11,8 @@ const GRAVITY := 9.8
 func _ready() -> void:
 	GlobalAutoload.speed_up.connect(speed_up)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	await get_tree().physics_frame
+	GlobalAutoload.money = 0
 
 func _unhandled_input(event):
 	

@@ -72,21 +72,21 @@ func _on_jump_scare_area_body_entered(body: Node3D) -> void:
 		get_tree().change_scene_to_file("res://villianstuff/Jumpscare/jumpscare.tscn")
 
 
-func start_timed_shake(duration: float, intensity: float, original_position : Vector3) -> void:
-	var tween = create_tween().set_loops(int(duration * 20)) 
-	
-	tween.tween_callback(func():
-		var current_decay = tween.get_total_elapsed_time() / duration
-		var current_intensity = lerp(intensity, 0.0, current_decay)
-		
-		var offset = Vector3(
-			randf_range(-current_intensity, current_intensity),
-			randf_range(-current_intensity, current_intensity),
-			randf_range(-current_intensity, current_intensity)
-		)
-		position = original_position + offset
-	)
-	tween.tween_interval(0.05) 
-	
-	await tween.finished
-	position = original_position
+#func start_timed_shake(duration: float, intensity: float, original_position : Vector3) -> void:
+	#var tween = create_tween().set_loops(int(duration * 20)) 
+	#
+	#tween.tween_callback(func():
+		#var current_decay = tween.get_total_elapsed_time() / duration
+		#var current_intensity = lerp(intensity, 0.0, current_decay)
+		#
+		#var offset = Vector3(
+			#randf_range(-current_intensity, current_intensity),
+			#randf_range(-current_intensity, current_intensity),
+			#randf_range(-current_intensity, current_intensity)
+		#)
+		#position = original_position + offset
+	#)
+	#tween.tween_interval(0.05) 
+	#
+	#await tween.finished
+	#position = original_position
