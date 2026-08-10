@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cadj550d1u5th"]
 
 [ext_resource type="Script" uid="uid://dt5lmv72stppa" path="res://Store/store.gd" id="1_m4bci"]
+[ext_resource type="PackedScene" uid="uid://bxkaanw0ua6xh" path="res://Assets/tablet.tscn" id="2_7nxbs"]
 
 [node name="Store" type="Control" unique_id=564668512]
 layout_mode = 3
@@ -13,6 +14,7 @@ script = ExtResource("1_m4bci")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=584048524]
+visible = false
 layout_mode = 0
 offset_left = 165.0
 offset_top = 29.0
@@ -20,32 +22,55 @@ offset_right = 985.0
 offset_bottom = 608.0
 color = Color(0.3530626, 0.35306263, 0.35306257, 1)
 
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1256112668]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 29.0
+offset_right = 984.0
+offset_bottom = 605.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=2059385558]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(816, 576)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=859850446]
+
+[node name="Cube" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=180863151 instance=ExtResource("2_7nxbs")]
+transform = Transform3D(1.1313341e-08, -4.222196e-08, -1, -1, -2.9802322e-08, -1.1313339e-08, -2.9802322e-08, 1, -4.222196e-08, 0, 0, -0.47254044)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Camera3D/Cube" unique_id=778204628]
+transform = Transform3D(0.8660254, -0.49999997, 5.0498983e-09, -0.12940952, -0.22414388, 0.9659258, -0.48296288, -0.83651626, -0.25881904, 0, 0, 0)
+
 [node name="Option 1" type="Button" parent="." unique_id=1018321217]
 layout_mode = 0
 offset_left = 410.0
-offset_top = 106.0
+offset_top = 149.0
 offset_right = 729.0
-offset_bottom = 214.0
+offset_bottom = 257.0
 theme_override_font_sizes/font_size = 36
 text = "Speed up 
 10$"
 
 [node name="Option 2" type="Button" parent="." unique_id=1553995178]
 layout_mode = 0
-offset_left = 165.0
-offset_top = 272.0
-offset_right = 484.0
-offset_bottom = 380.0
+offset_left = 190.0
+offset_top = 263.0
+offset_right = 509.0
+offset_bottom = 371.0
 theme_override_font_sizes/font_size = 36
 text = "Strength up
 10$"
 
 [node name="Option 4" type="Button" parent="." unique_id=1486429349]
 layout_mode = 0
-offset_left = 665.0
-offset_top = 272.0
-offset_right = 984.0
-offset_bottom = 380.0
+offset_left = 604.0
+offset_top = 263.0
+offset_right = 923.0
+offset_bottom = 371.0
 theme_override_font_sizes/font_size = 36
 text = "Xray coins
 10$"
@@ -53,9 +78,9 @@ text = "Xray coins
 [node name="Option 3" type="Button" parent="." unique_id=1200292197]
 layout_mode = 0
 offset_left = 410.0
-offset_top = 438.0
+offset_top = 380.0
 offset_right = 729.0
-offset_bottom = 546.0
+offset_bottom = 488.0
 theme_override_font_sizes/font_size = 36
 text = "Escape 
 40$"

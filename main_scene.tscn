@@ -11,8 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://hkrkgr1x2og1" path="res://Assets/dirty_carpet_1k.gltf/textures/dirty_carpet_nor_gl_1k.jpg" id="10_mo76n"]
 [ext_resource type="Script" uid="uid://camhv1hkwkbbm" path="res://collectible/collectible_manager.gd" id="10_qwutr"]
 [ext_resource type="PackedScene" uid="uid://bv8n8r6xq81lf" path="res://collectible/collectible.tscn" id="10_wr18j"]
-[ext_resource type="PackedScene" uid="uid://crdi4hcopep3r" path="res://Assets/Tabled.glb" id="12_671wp"]
-[ext_resource type="PackedScene" uid="uid://dp41rq4qgqs7g" path="res://villianstuff/villian.glb" id="13_42l1d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wr18j"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,9 +24,6 @@ background_mode = 2
 sky = SubResource("Sky_qwutr")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_usgnq"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_c4y8e"]
-size = Vector3(0.83651125, 2.1427612, 0.74176025)
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_usgnq"]
 
@@ -150,37 +145,6 @@ color = Color(0.18692067, 0, 0.009681254, 1)
 [node name="villian" parent="." unique_id=1679819218 instance=ExtResource("4_qwutr")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -6.228733, 1.0222945, -47.052242)
 
-[node name="villian3" parent="." unique_id=365356023 instance=ExtResource("13_42l1d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0976949, 1.9711487, -1.529171)
-
-[node name="Skeleton3D" parent="villian3/Armature_013" parent_id_path=PackedInt32Array(365356023, 1415574284) index="0" unique_id=1049948866]
-bones/6/rotation = Quaternion(0.23071773, 1.6198157e-07, 0.1172879, 0.96592593)
-bones/7/rotation = Quaternion(-0.11989658, -2.799024e-07, -0.060950577, 0.9909136)
-bones/13/rotation = Quaternion(0.5927552, 0.6021657, 0.42869887, -0.31977352)
-bones/14/position = Vector3(0.5876539, 1.257225, -0.17187935)
-bones/15/rotation = Quaternion(0.19544898, 0.10503317, 0.20018984, 0.95430183)
-bones/16/rotation = Quaternion(-0.72998536, -0.60424167, 0.12057866, 0.29576048)
-bones/17/rotation = Quaternion(-0.10923614, -0.09835417, -0.02782977, 0.9887464)
-bones/18/rotation = Quaternion(-0.07080974, 0.7634816, 0.10053736, 0.6340142)
-bones/19/position = Vector3(-0.1478074, 2.058819, -0.08966226)
-bones/19/rotation = Quaternion(-0.2047745, 0.7103374, 0.2192501, 0.6367242)
-bones/20/rotation = Quaternion(0.7285776, -0.51584256, 0.06569603, -0.44583103)
-bones/33/rotation = Quaternion(0.86680853, 0.3663887, 0.32011557, -0.1092176)
-bones/34/rotation = Quaternion(-0.40454918, 0.29119515, 0.16118903, 0.8518002)
-bones/35/rotation = Quaternion(0.2804748, -0.005133655, 0.41053724, 0.86762124)
-bones/36/rotation = Quaternion(0.031135527, 0.049225777, 0.031032518, 0.99781984)
-bones/37/rotation = Quaternion(0.025836457, 0.36193663, -0.68074685, 0.6363318)
-bones/38/rotation = Quaternion(0.7059854, -0.37646103, 0.5961673, -0.06668097)
-bones/39/rotation = Quaternion(0.07186627, -0.3217332, -0.38732067, 0.86099124)
-bones/40/rotation = Quaternion(-0.00031442413, 0.0013524634, 0.0018303402, 0.9999974)
-bones/41/rotation = Quaternion(-0.0022971064, 0.0087996805, 0.010621328, 0.99990225)
-bones/42/rotation = Quaternion(0.52645, 0.58273935, -0.4297619, -0.44561198)
-bones/43/rotation = Quaternion(-0.5979393, 0.6371135, -0.032924272, -0.48525345)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="villian3" unique_id=1826842752]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0013241768, -0.2657776, -0.05142212)
-shape = SubResource("BoxShape3D_c4y8e")
-
 [node name="Microphone" type="AudioStreamPlayer" parent="." unique_id=1123221219]
 stream = SubResource("AudioStreamMicrophone_usgnq")
 autoplay = true
@@ -284,9 +248,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.74908, 1.1573666, -31.421
 [node name="Collectible19" parent="Coins" unique_id=342968851 instance=ExtResource("10_wr18j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.74908, 1.1573666, -22.421402)
 
-[node name="Tabled" parent="." unique_id=154273120 instance=ExtResource("12_671wp")]
-transform = Transform3D(-1.4950176e-08, -4.1075268e-08, -1, -0.9396926, 0.34202015, 0, 0.34202015, 0.9396926, -4.371139e-08, -0.13896763, 1.4728526, -2.6871798)
-
 [connection signal="body_entered" from="Coins/Collectible" to="Player" method="_on_collectible_body_entered"]
 [connection signal="body_entered" from="Coins/Collectible2" to="Player" method="_on_collectible_body_entered"]
 [connection signal="body_entered" from="Coins/Collectible3" to="Player" method="_on_collectible_body_entered"]
@@ -305,5 +266,3 @@ transform = Transform3D(-1.4950176e-08, -4.1075268e-08, -1, -0.9396926, 0.342020
 [connection signal="body_entered" from="Coins/Collectible17" to="Player" method="_on_collectible_body_entered"]
 [connection signal="body_entered" from="Coins/Collectible18" to="Player" method="_on_collectible_body_entered"]
 [connection signal="body_entered" from="Coins/Collectible19" to="Player" method="_on_collectible_body_entered"]
-
-[editable path="villian3"]

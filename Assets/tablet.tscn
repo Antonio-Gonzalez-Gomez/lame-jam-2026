@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bxkaanw0ua6xh"]
+
+[ext_resource type="ArrayMesh" uid="uid://c02in5a6stw8q" path="res://Assets/tablet.tres" id="1_y08ky"]
+
+[node name="Cube" type="MeshInstance3D" unique_id=180863151]
+mesh = ExtResource("1_y08ky")

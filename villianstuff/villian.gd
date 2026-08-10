@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 	if GlobalAutoload.player_vision == $Face and GlobalAutoload.voice >= 200:
 		nav_agent.target_position = position
 		scare_meter += delta
+		$Model/AnimationPlayer.stop()
 		if scare_meter >= scare_requirement:
 			position = get_farthest_spawn().position
 			reset_stats()
@@ -33,6 +34,10 @@ func _physics_process(delta: float) -> void:
 			#speed = 3 + ((speed - 3)/3)
 			#scare_requirement += 0.1
 	else:
+		if not $Model/AnimationPlayer.is_playing():
+			$Model/AnimationPlayer.play("walk")
+			$Model/AnimationPlayer.speed_scale = 4
+		
 		scare_meter -= delta/5
 		if scare_meter < 0: scare_meter = 0
 		if scare_meter == 0:
