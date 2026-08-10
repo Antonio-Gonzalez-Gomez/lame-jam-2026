@@ -98,7 +98,7 @@ environment = SubResource("Environment_671wp")
 
 [node name="Sunlight" type="DirectionalLight3D" parent="." unique_id=1703013051]
 transform = Transform3D(0.9659258, -1.131334e-08, 0.25881904, -0.25881904, -4.222196e-08, 0.9659258, 0, -1, -4.371139e-08, 0, 22.356361, 0)
-light_energy = 0.24
+light_energy = 0.034
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=522649653]
 script = ExtResource("4_8mm7a")
@@ -270,9 +270,11 @@ grow_vertical = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1156104170]
+handle_input_locally = false
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
 size = Vector2i(1152, 648)
+render_target_update_mode = 4
 
 [node name="Player" type="CharacterBody3D" parent="SubViewportContainer/SubViewport" unique_id=1992947678]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.888051, -2.0845642)

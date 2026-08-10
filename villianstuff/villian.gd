@@ -27,6 +27,7 @@ func _physics_process(delta: float) -> void:
 		nav_agent.target_position = position
 		scare_meter += delta
 		$Model/AnimationPlayer.stop()
+		start_timed_shake(0.01,0.05,position)
 		if scare_meter >= scare_requirement:
 			position = get_farthest_spawn().position
 			reset_stats()
@@ -65,3 +66,28 @@ func get_farthest_spawn() -> Node3D:
 func reset_stats() -> void:
 	speed = base_speed + (max_speed - base_speed) * GlobalAutoload.difficulty
 	scare_requirement = base_scare_requirement + (max_scare_requirement - base_scare_requirement) * GlobalAutoload.difficulty
+
+
+func _on_jump_scare_area_body_entered(body: Node3D) -> void:
+	if body == player:
+		get_tree().change_scene_to_file("res://villianstuff/Jumpscare/jumpscare.tscn")
+
+
+func start_timed_shake(duration: float, intensity: float, original_position : Vector3) -> void:
+	var tween = create_tween().set_loops(int(duration * 20)) 
+	
+	tween.tween_callback(func():
+		var current_decay = tween.get_total_elapsed_time() / duration
+		var current_intensity = lerp(intensity, 0.0, current_decay)
+		
+		var offset = Vector3(
+			randf_range(-current_intensity, current_intensity),
+			randf_range(-current_intensity, current_intensity),
+			randf_range(-current_intensity, current_intensity)
+		)
+		position = original_position + offset
+	)
+	tween.tween_interval(0.05) 
+	
+	await tween.finished
+	position = original_position

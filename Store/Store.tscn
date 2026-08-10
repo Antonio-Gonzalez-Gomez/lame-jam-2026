@@ -53,7 +53,7 @@ offset_right = 729.0
 offset_bottom = 257.0
 theme_override_font_sizes/font_size = 36
 text = "Speed up 
-10$"
+4.99$"
 
 [node name="Option 2" type="Button" parent="." unique_id=1553995178]
 layout_mode = 0
@@ -63,7 +63,7 @@ offset_right = 509.0
 offset_bottom = 371.0
 theme_override_font_sizes/font_size = 36
 text = "Strength up
-10$"
+4.99$"
 
 [node name="Option 4" type="Button" parent="." unique_id=1486429349]
 layout_mode = 0
@@ -73,7 +73,7 @@ offset_right = 923.0
 offset_bottom = 371.0
 theme_override_font_sizes/font_size = 36
 text = "Xray coins
-10$"
+4.99$"
 
 [node name="Option 3" type="Button" parent="." unique_id=1200292197]
 layout_mode = 0
@@ -83,7 +83,7 @@ offset_right = 729.0
 offset_bottom = 488.0
 theme_override_font_sizes/font_size = 36
 text = "Escape 
-40$"
+19.99$"
 
 [connection signal="pressed" from="Option 1" to="." method="_on_option_1_pressed"]
 [connection signal="pressed" from="Option 2" to="." method="_on_option_2_pressed"]

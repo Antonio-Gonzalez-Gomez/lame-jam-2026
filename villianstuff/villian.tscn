@@ -334,6 +334,9 @@ data = PackedByteArray("SUQzBAAAAAABAFRYWFgAAAASAAADbWFqb3JfYnJhbmQAbXA0MgBUWFhY
 loop = true
 loop_offset = 0.995
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_17xpg"]
+size = Vector3(1, 2, 1)
+
 [node name="villian" type="Node3D" unique_id=1679819218]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 script = ExtResource("1_ta5am")
@@ -682,3 +685,11 @@ shape = SubResource("BoxShape3D_uhn5l")
 stream = SubResource("AudioStreamMP3_671wp")
 autoplay = true
 max_distance = 20.0
+
+[node name="Jump scare area" type="Area3D" parent="." unique_id=895456305]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jump scare area" unique_id=469741546]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2342187e-08, 0.5, 0.59872484)
+shape = SubResource("BoxShape3D_17xpg")
+
+[connection signal="body_entered" from="Jump scare area" to="." method="_on_jump_scare_area_body_entered"]
