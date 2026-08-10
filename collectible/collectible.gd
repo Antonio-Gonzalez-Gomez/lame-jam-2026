@@ -1,5 +1,6 @@
 extends Area3D
 
+@onready var player: CharacterBody3D = $"../../SubViewportContainer/SubViewport/Player"
 
 @export var rotation_speed := 3.0
 #In case the bills are of different amounts, this one is 5 dollars
@@ -12,11 +13,11 @@ func _process(delta: float) -> void:
 	#Cosmetic rotation
 	rotate_y(rotation_speed * delta)
 
-func _on_body_entered(_body: Node3D) -> void:
-	#Execute code on the autoload
-	GlobalAutoload.money += money_value
+func _on_body_entered(body: Node3D) -> void:
+	if body == player:
+		GlobalAutoload.money += money_value
 	#Destroys itself after being collected
-	queue_free()
+		queue_free()
 
 func xray():
 	var overlay_mat = $MeshInstance3D.material_overlay

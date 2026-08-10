@@ -18,9 +18,9 @@ func _on_option_2_pressed() -> void:
 
 
 func _on_option_3_pressed() -> void:
-	if GlobalAutoload.money >= 20:
+	if GlobalAutoload.money >= 25:
 		GlobalAutoload.escape.emit()
-		GlobalAutoload.money -= 20
+		GlobalAutoload.money -= 25
 		get_tree().change_scene_to_file("res://end and start screens/end_screen.tscn")
 
 

@@ -101,7 +101,7 @@ offset_bottom = 488.0
 theme_override_fonts/font = ExtResource("3_mj1pt")
 theme_override_font_sizes/font_size = 36
 text = "Escape 
-19.99$"
+24.99$"
 
 [connection signal="pressed" from="Option 1" to="." method="_on_option_1_pressed"]
 [connection signal="pressed" from="Option 2" to="." method="_on_option_2_pressed"]
