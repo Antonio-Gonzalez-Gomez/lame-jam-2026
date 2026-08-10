@@ -12,8 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://hkrkgr1x2og1" path="res://Assets/dirty_carpet_1k.gltf/textures/dirty_carpet_nor_gl_1k.jpg" id="10_mo76n"]
 [ext_resource type="Script" uid="uid://camhv1hkwkbbm" path="res://collectible/collectible_manager.gd" id="10_qwutr"]
 [ext_resource type="PackedScene" uid="uid://bv8n8r6xq81lf" path="res://collectible/collectible.tscn" id="10_wr18j"]
+[ext_resource type="Material" uid="uid://y8a8g0l472c" path="res://Assets/Walls/Walls.tres" id="12_7th4q"]
 [ext_resource type="PackedScene" uid="uid://crdi4hcopep3r" path="res://Assets/Tabled.glb" id="12_671wp"]
 [ext_resource type="PackedScene" uid="uid://dp41rq4qgqs7g" path="res://villianstuff/villian.glb" id="13_42l1d"]
+[ext_resource type="Texture2D" uid="uid://cfs2agior3tgg" path="res://Assets/roof/checkered_pavement_tiles_diff_1k.jpg" id="16_6jybn"]
+[ext_resource type="Texture2D" uid="uid://bixxv031wp28e" path="res://Assets/roof/checkered_pavement_tiles_nor_gl_1k.png" id="17_84odl"]
+[ext_resource type="Texture2D" uid="uid://c1klktnjum4um" path="res://Assets/roof/checkered_pavement_tiles_rough_1k.png" id="18_ak604"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2jcla"]
 shader = ExtResource("1_42l1d")
@@ -77,6 +81,17 @@ data = PackedVector3Array(-50, -0.5, -50, -50, 0, -50, -50, 0, -48.5, -45, 0.5, 
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c4y8e"]
 size = Vector3(0.83651125, 2.1427612, 0.74176025)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c4y8e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5spj"]
+albedo_color = Color(2.0038323, 2.0038323, 2.0038323, 1)
+albedo_texture = ExtResource("16_6jybn")
+roughness_texture = ExtResource("18_ak604")
+normal_enabled = true
+normal_texture = ExtResource("17_84odl")
+uv1_scale = Vector3(7.03, 7.03, 7.03)
+uv1_triplanar = true
 
 [node name="Node3D" type="Node3D" unique_id=208756949]
 
@@ -208,6 +223,7 @@ navigation_mesh = SubResource("NavigationMesh_uhn5l")
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Map/NavigationRegion3D/Map" unique_id=214378863]
 mesh = SubResource("ArrayMesh_671wp")
+surface_material_override/1 = ExtResource("12_7th4q")
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Map/NavigationRegion3D/Map" unique_id=1224183062]
 shape = SubResource("ConcavePolygonShape3D_mo76n")
@@ -309,6 +325,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.74908, 1.1573666, -31.421
 
 [node name="Collectible19" parent="SubViewportContainer/SubViewport/Coins" unique_id=342968851 instance=ExtResource("10_wr18j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.74908, 1.1573666, -22.421402)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1291303332]
+transform = Transform3D(57.249027, 0, 0, 0, -0.99999994, 2.4964277e-06, 0, -8.742277e-08, -28.555805, 0, 3.9388437, -25.212559)
+mesh = SubResource("PlaneMesh_c4y8e")
+surface_material_override/0 = SubResource("StandardMaterial3D_c5spj")
 
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Coins/Collectible" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Coins/Collectible2" to="SubViewportContainer/SubViewport/Player" method="_on_collectible_body_entered"]
