@@ -1,8 +1,8 @@
 extends Node3D
 
 @export var voice_requirement := 200.0
-@export var base_speed := 1.0
-@export var max_speed := 4.0
+@export var base_speed := 3.0
+@export var max_speed := 6.0
 @export var base_scare_requirement := 0.15
 @export var max_scare_requirement := 1.0
 
