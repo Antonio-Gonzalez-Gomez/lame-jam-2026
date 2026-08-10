@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dlssbqu6l5cp4"]
+
+[ext_resource type="Script" uid="uid://d5m532klqvvx" path="res://end and start screens/start_screen.gd" id="1_cnig1"]
+[ext_resource type="FontFile" uid="uid://b1dko0dsubuxw" path="res://Assets/unispace/Unispace Rg.otf" id="1_kkxpc"]
+[ext_resource type="FontFile" uid="uid://bif2iaxrytgqc" path="res://Assets/unispace/Unispace Bd.otf" id="2_nvr50"]
+
+[node name="Start screen" type="Control" unique_id=411071989]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cnig1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1349629227]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1489566375]
+layout_mode = 0
+offset_right = 845.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_kkxpc")
+text = "You've woken up in a strange maze next to a tablet, with a strange feeling in your vocal cords.
+
+Scream into the device's microphone to break barriers.
+
+Screaming into the microphone while staring at the monster will scare it off.
+
+Screaming at a barricade while looking at it will break it.
+
+Collect money to buy upgrades and your escape.
+
+Controls:
+WASD: Movement
+ESC: Tablet
+Microphone: Sound Controls"
+
+[node name="Button" type="Button" parent="." unique_id=353354622]
+layout_mode = 0
+offset_left = 1016.0
+offset_top = 548.0
+offset_right = 1150.0
+offset_bottom = 644.0
+theme_override_fonts/font = ExtResource("2_nvr50")
+theme_override_font_sizes/font_size = 22
+text = "continue "
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -24,12 +24,12 @@ var original_position : Vector3
 
 func _ready() -> void:
 	original_position = position
-	start_timed_shake(5,0.05)
-	await get_tree().create_timer(3).timeout
+	start_timed_shake(5,0.035)
+	await get_tree().create_timer(2.25).timeout
 	$\"../AudioStreamPlayer\".stop()
 	$\"../Deathscreen\".show()
 	await get_tree().create_timer(3).timeout
-	get_tree().change_scene_to_file(\"res://main_scene.tscn\")
+	get_tree().change_scene_to_file(\"res://end and start screens/start_screen.tscn\")
 
 func start_timed_shake(duration: float, intensity: float) -> void:
 	var tween = create_tween().set_loops(int(duration * 20))

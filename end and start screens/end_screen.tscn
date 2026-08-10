@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c1ug635m4yr10"]
+
+[ext_resource type="Script" uid="uid://dj6gtkqp3qx5v" path="res://end and start screens/end_screen.gd" id="1_ntvnp"]
+
+[node name="end screen" type="Control" unique_id=992819749]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ntvnp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=404270095]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

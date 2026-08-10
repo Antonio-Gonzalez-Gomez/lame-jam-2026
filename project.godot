@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Lame Jam 2026"
-run/main_scene="uid://d10ifeqqo4oj5"
+run/main_scene="uid://dlssbqu6l5cp4"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

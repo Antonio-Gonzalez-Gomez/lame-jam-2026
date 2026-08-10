@@ -21,6 +21,7 @@ func _on_option_3_pressed() -> void:
 	if GlobalAutoload.money >= 20:
 		GlobalAutoload.escape.emit()
 		GlobalAutoload.money -= 20
+		get_tree().change_scene_to_file("res://end and start screens/end_screen.tscn")
 
 
 func _on_option_4_pressed() -> void:
