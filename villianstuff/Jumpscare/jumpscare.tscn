@@ -2,6 +2,7 @@
 
 [ext_resource type="Material" uid="uid://deqbs5yvyib80" path="res://villianstuff/villianmaterial.tres" id="1_e821q"]
 [ext_resource type="AudioStream" uid="uid://dmg5s6dtrbfya" path="res://Assets/freesound_community-jumpscare-94984.mp3" id="2_tuxk4"]
+[ext_resource type="Texture2D" uid="uid://bw8lhu2aemff3" path="res://Assets/deathscreen.webp" id="3_tuxk4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e821q"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -24,6 +25,11 @@ var original_position : Vector3
 func _ready() -> void:
 	original_position = position
 	start_timed_shake(5,0.05)
+	await get_tree().create_timer(3).timeout
+	$\"../AudioStreamPlayer\".stop()
+	$\"../Deathscreen\".show()
+	await get_tree().create_timer(3).timeout
+	get_tree().change_scene_to_file(\"res://main_scene.tscn\")
 
 func start_timed_shake(duration: float, intensity: float) -> void:
 	var tween = create_tween().set_loops(int(duration * 20))
@@ -541,3 +547,8 @@ autoplay = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1813432909]
 transform = Transform3D(0.98356193, -0.18057095, 0, 0.18057095, 0.98356193, 0, 0, 0, 1, 0, 0.6977204, 0.35034353)
+
+[node name="Deathscreen" type="Sprite2D" parent="." unique_id=1978970666]
+visible = false
+position = Vector2(571, 335)
+texture = ExtResource("3_tuxk4")
